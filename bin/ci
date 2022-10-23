@@ -6,7 +6,7 @@ echo "[ bin/ci ] Setting RAILS_ENV to test"
 export RAILS_ENV=test
 
 echo "[ bin/ci ] Preparing database"
-bin/rails db:reset || bin/rails db:migrate
+bin/rails db:schema:load --trace
 
 echo "[ bin/ci ] Linting source"
 bundle exec rubocop -A --parallel

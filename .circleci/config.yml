@@ -31,7 +31,7 @@ jobs:
           POSTGRES_PASSWORD: money
           POSTGRES_USER: adventure
         image: 'cimg/postgres:14.5'
-    parallelism: 3
+    parallelism: 1
     environment:
       BUNDLE_JOBS: '3'
       BUNDLE_RETRY: '3'
@@ -52,8 +52,6 @@ jobs:
           command: 'bundle exec rails db:schema:load --trace'
           name: Database setup
       - ruby/rspec-test
-      - store_artifacts:
-          path: coverage
 
 workflows:
   build_and_test:
