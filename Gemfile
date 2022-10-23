@@ -78,6 +78,7 @@ group :development, :test do
   gem "standard", require: false
   gem "rubocop-rails", require: false
   gem "rubocop-rspec", require: false
+
   gem "rspec-rails", "~> 6.0"
   gem "shoulda-matchers"
   gem "factory_bot_rails"
@@ -99,9 +100,13 @@ group :development do
 end
 
 group :test do
+  gem "capybara"
+  gem "webmock"
+
   gem "database_cleaner-active_record"
   gem "rails-controller-testing"
 
   gem "simplecov"
   gem "simplecov-json"
+  gem "rspec_junit_formatter"
 end
