@@ -10,6 +10,7 @@ def setup
   system! "bundle config set --local jobs $(nproc)"
   system! "bundle config set --local retry 3"
   system! "bundle config set --local build.nokogiri --use-system-libraries"
+  system! "bundle config set --local build.debase --use-system-libraries"
   system! "bundle check || bundle install"
 
   log "Use Yarn to install NodeJS packages"
