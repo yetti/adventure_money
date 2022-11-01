@@ -3,40 +3,21 @@
   <head>
     <title>Adventure Money</title>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description" content="Board game collection manager">
     <meta name="author" content="Yetrina Battad">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <script>
-      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
-      if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark')
-      }
-    </script>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
     <%= stylesheet_link_tag "application" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body class="bg-gray-50 dark:bg-gray-800">
-    <%= render "shared/header" %>
-    <div class="flex overflow-hidden pt-16 bg-gray-50 dark:bg-gray-900">
-      <%= render "shared/sidebar" %>
-
-      <div id="main-content" class="overflow-y-auto relative w-full h-full bg-gray-50 lg:ml-64 dark:bg-gray-900">
-        <main>
-          <%= yield %>
-        </main>
-        <%= render "shared/footer" %>
+  <body>
+    <div class="container">
+      <%= render "shared/nav" %>
+      <div class="p-sm-2">
+        <%= yield %>
       </div>
     </div>
   </body>

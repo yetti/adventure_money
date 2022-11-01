@@ -76,7 +76,7 @@ provision:
   # We need the `|| true` part because some docker-compose versions
   # cannot down a non-existent container without an error,
   # see https://github.com/docker/compose/issues/9426
-  - (test -f .env) || (echo "\n\n ⚠️  .env file is missing\n\n"; exit 1)
+  - (test -f .env.development) || (echo "\n\n ⚠️  .env.development file is missing\n\n"; exit 1)
   - dip compose down --volumes
   - dip compose up -d postgres redis
 #  - dip bash -c bin/setup

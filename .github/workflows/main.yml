@@ -41,6 +41,7 @@ jobs:
       - name: Run linters
         run: |
           bundle exec rubocop --parallel
+          bundle exec erblint --lint-all
 
       - name: Run security checks
         run: |
@@ -98,6 +99,6 @@ jobs:
       - name: Simplecov Report
         uses: aki77/simplecov-report-action@v1
         with:
-          failedThreshold: 0
+          failedThreshold: 80
           token: ${{ secrets.GITHUB_TOKEN }}
         if: ${{ github.actor != 'dependabot[bot]' }}

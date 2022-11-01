@@ -40,6 +40,12 @@ gem "puma", "~> 6.0"
 # Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
 gem "jsbundling-rails"
 
+# Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
+gem "turbo-rails"
+
+# Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
+gem "stimulus-rails"
+
 # Bundle and process CSS [https://github.com/rails/cssbundling-rails]
 gem "cssbundling-rails"
 
@@ -76,13 +82,13 @@ group :development, :test do
   gem "debug", platforms: %i[mri mingw x64_mingw]
 
   gem "standard", require: false
-  gem "rubocop-rails", require: false
-  gem "rubocop-rspec", require: false
+  gem "rubocop", require: false
+  gem "rubocop-rails", "2.17.0", require: false
+  gem "rubocop-performance", require: false
+  gem "rubocop-rspec", "2.14.1", require: false
 
-  gem "rspec-rails", "~> 6.0"
-  gem "shoulda-matchers"
-  gem "factory_bot_rails"
-  gem "faker"
+  gem "better_html"
+  gem "erb_lint", require: false
 end
 
 group :development do
@@ -101,12 +107,20 @@ end
 
 group :test do
   gem "capybara"
+  gem "selenium-webdriver"
+  gem "webdrivers"
   gem "webmock"
+
+  gem "rspec-rails", "~> 6.0"
+  gem "shoulda-matchers"
+  gem "factory_bot_rails"
+  gem "faker"
+  gem "rspec-html-matchers"
 
   gem "database_cleaner-active_record"
   gem "rails-controller-testing"
 
-  gem "simplecov"
+  gem "simplecov", require: false
   gem "simplecov-json"
   gem "rspec_junit_formatter"
 end
