@@ -8,12 +8,8 @@ export RAILS_ENV=test
 echo "[ bin/ci ] Preparing database"
 bin/rails db:reset || bin/rails db:migrate
 
-echo "[ bin/ci ] Linting source"
-bundle exec rubocop -A --parallel
-bundle exec erblint --lint-all
-
-echo "[ bin/ci ] Running RSpec tests"
-bundle exec rspec
+echo "[ bin/ci ] Precompiling assets"
+bundle exec rake assets:precompile --trace
 
 echo "[ bin/ci ] Analysing code for security vulnerabilities."
 echo "[ bin/ci ] Output will be in tmp/brakeman.html, which"
@@ -23,6 +19,13 @@ bundle exec brakeman -q -o tmp/brakeman.html
 echo "[ bin/ci ] Analysing Ruby gems for"
 echo "[ bin/ci ] security vulnerabilities"
 bundle exec bundle audit check --update
+
+echo "[ bin/ci ] Linting source"
+bundle exec rubocop -A --parallel
+bundle exec erblint --lint-all
+
+echo "[ bin/ci ] Running RSpec tests"
+bundle exec rspec
 
 echo "[ bin/ci ] Done"
 

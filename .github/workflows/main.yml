@@ -28,16 +28,6 @@ jobs:
           ruby-version: ${{ env.RUBY_VERSION }}
           bundler-cache: true
 
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-          cache: yarn
-
-      - name: Install NPM packages
-        run: |
-          yarn install --pure-lockfile
-
       - name: Run linters
         run: |
           bundle exec rubocop --parallel
@@ -84,9 +74,10 @@ jobs:
           node-version: 16
           cache: yarn
 
-      - name: Install NPM packages
+      - name: Precompile assets
         run: |
-          yarn install --pure-lockfile
+          bundle exec rake assets:precompile --trace
+          ls /home/runner/work/adventure-money/adventure-money/public/assets
 
       - name: Set up database
         run: |
@@ -94,7 +85,7 @@ jobs:
 
       - name: RSpec tests
         run: |
-          bundle exec rspec
+          bundle exec rspec spec
 
       - name: Simplecov Report
         uses: aki77/simplecov-report-action@v1
@@ -102,3 +93,9 @@ jobs:
           failedThreshold: 80
           token: ${{ secrets.GITHUB_TOKEN }}
         if: ${{ github.actor != 'dependabot[bot]' }}
+
+      - name: Create Coverage Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: code-coverage
+          path: coverage/
