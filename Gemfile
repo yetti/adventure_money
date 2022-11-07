@@ -67,7 +67,7 @@ gem "bootsnap", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
-gem "view_component", "~> 2.74"
+gem "view_component", "~> 2.75"
 gem "view_component-contrib", "~> 0.1.1"
 gem "lookbook", "~> 1.1"
 
