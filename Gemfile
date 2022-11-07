@@ -69,7 +69,7 @@ gem "bootsnap", require: false
 
 gem "view_component", "~> 2.74"
 gem "view_component-contrib", "~> 0.1.1"
-gem "lookbook", "~> 1.1"
+gem "lookbook", "~> 1.3"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
