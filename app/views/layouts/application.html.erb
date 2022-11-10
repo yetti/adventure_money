@@ -1,16 +1,24 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>AdventureMoney</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<html lang="<%= I18n.locale %>">
+<head>
+  <title>Adventure Money</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Board game collection manager">
+  <meta name="author" content="Yetrina Battad">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
-  </head>
+  <%= stylesheet_link_tag "application" %>
+  <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+</head>
 
-  <body>
+<body>
+<div class="container">
+  <%= render "shared/nav" %>
+  <div class="p-sm-2">
     <%= yield %>
-  </body>
+  </div>
+</div>
+</body>
 </html>
