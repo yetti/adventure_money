@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="<%= I18n.locale %>">
 <head>
-  <title>Adventure Money</title>
+  <title><%= @page_title || "Adventure Money" %></title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Board game collection manager">
@@ -17,6 +17,7 @@
 <div class="container">
   <%= render "shared/nav" %>
   <div class="p-sm-2">
+    <%= render "shared/flash" %>
     <%= yield %>
   </div>
 </div>
