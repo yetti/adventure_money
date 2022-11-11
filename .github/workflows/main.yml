@@ -95,9 +95,7 @@ jobs:
         run: |
           bundle exec rspec
 
-      - name: Simplecov Report
-        uses: aki77/simplecov-report-action@v1
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
         with:
-          failedThreshold: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
-        if: ${{ github.actor != 'dependabot[bot]' }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
