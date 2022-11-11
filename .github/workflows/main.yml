@@ -64,6 +64,7 @@ jobs:
           - "5432:5432"
     env:
       CI: true
+      RAILS_SERVE_STATIC_FILES: true
       RUBY_VERSION: '3.1.2'
       RAILS_ENV: test
       DATABASE_URL: "postgres://adventure:money@0.0.0.0:5432/adventure_money_test"
