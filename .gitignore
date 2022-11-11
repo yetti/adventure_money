@@ -6,6 +6,9 @@
 
 .DS_Store
 
+# never check this in
+master.key
+
 # Ignore bundler config.
 /.bundle
 
