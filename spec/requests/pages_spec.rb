@@ -2,8 +2,8 @@ require "rails_helper"
 
 RSpec.describe "Pages" do
   before do
-    account = Account.create!(email: "user@example.com", password: "secret123", status: "verified")
-    login(account)
+    create_account(verify: false)
+    login
   end
 
   describe "GET /owed" do
@@ -68,8 +68,23 @@ RSpec.describe "Pages" do
 
   private
 
-  def login(account)
-    @request.session[:account_id] = account.id
-    @request.session[:authenticated_by] = ["password"]
+  def create_account(email: "user@example.com", password: "secret", verify: false)
+    post "/create-account", as: :json, params: {login: email, password: password, "password-confirm": password}
+    verify_account if verify
+  end
+
+  def verify_account
+    perform_enqueued_jobs # run enqueued email deliveries
+    email = ActionMailer::Base.deliveries.last
+    verify_account_key = email.body.to_s[/verify-account\?key=(\S+)/, 1]
+    post "/verify-account", as: :json, params: {key: verify_account_key}
+  end
+
+  def login(email: "user@example.com", password: "secret")
+    post "/login", as: :json, params: {login: email, password: password}
+  end
+
+  def logout
+    post "/logout", as: :json, headers: {"Authorization" => headers["Authorization"]}
   end
 end
