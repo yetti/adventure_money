@@ -120,7 +120,7 @@ group :test do
   gem "database_cleaner-redis"
   gem "rails-controller-testing"
 
-  gem "simplecov", require: false
-  gem "simplecov-json"
-  gem "rspec_junit_formatter"
+  gem "simplecov"
+  gem "simplecov-lcov", "~> 0.8.0"
+  gem "coveralls_reborn", "~> 0.25.0", require: false
 end
