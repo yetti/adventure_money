@@ -1,0 +1,34 @@
+databases:
+  - name: adventure_money-db
+    plan: starter
+    region: singapore
+    databaseName: adventure_money
+    user: adventure_money
+
+services:
+  - type: redis
+    plan: starter
+    name: adventure_money-cache
+    region: singapore
+    ipAllowList: [] # only allow internal connections
+    maxmemoryPolicy: allkeys-lfu # optional (defalts to allkeys-lru).  Rails recommends allkeys-lfu as a default.
+  - type: web
+    plan: starter
+    name: kahon
+    region: singapore
+    env: ruby
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    pullRequestPreviewsEnabled: true
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: adventure_money-db
+          property: connectionString
+      - key: SECRET_KEY_BASE
+        sync: false
+      - key: REDIS_URL
+        fromService:
+          type: redis
+          name: adventure_money-cache
+          property: connectionString
