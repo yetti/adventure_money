@@ -45,6 +45,7 @@ jobs:
       BUNDLE_RETRY: 3
       RAILS_ENV: test
       CI: 'true'
+      RAILS_SERVE_STATIC_FILES: true
       DATABASE_URL: postgres://postgres:@localhost/adventure_money_test
     parallelism: 3
     steps:
