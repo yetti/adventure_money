@@ -116,9 +116,12 @@ group :test do
   gem "rspec-html-matchers"
 
   gem "database_cleaner-active_record"
+  gem "database_cleaner-redis"
   gem "rails-controller-testing"
 
   gem "simplecov", require: false
+  gem "simplecov-lcov", require: false
   gem "simplecov-json"
+  gem "coveralls_reborn", require: false
   gem "rspec_junit_formatter"
 end

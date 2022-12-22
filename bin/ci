@@ -24,6 +24,7 @@ echo "[ bin/erb_lint ] Linting ERB"
 bin/erb_lint
 
 echo "[ bin/ci ] Running RSpec tests"
+export COVERAGE=Summary
 bundle exec rspec
 
 echo "[ bin/ci ] Done"

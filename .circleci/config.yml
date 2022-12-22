@@ -38,6 +38,7 @@ jobs:
       - image: cimg/postgres:14.5
         environment:
           POSTGRES_USER: postgres
+          COVERAGE: Summary,Coveralls
 
     environment:
       BUNDLE_JOBS: 3
