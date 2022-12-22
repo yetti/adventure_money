@@ -120,7 +120,6 @@ group :test do
   gem "rails-controller-testing"
 
   gem "simplecov", require: false
-  gem "simplecov-lcov", require: false
   gem "simplecov-json"
   gem "coveralls_reborn", require: false
   gem "rspec_junit_formatter"

@@ -7,7 +7,7 @@ require "simplecov_json_formatter"
 SimpleCov.start("rails") do
   enable_coverage :branch
 
-  minimum_coverage 80
+  # minimum_coverage 80
 
   command_name "Job #{ENV["CIRCLE_NODE_INDEX"]}" if ENV["CIRCLE_NODE_INDEX"]
 
