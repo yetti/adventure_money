@@ -8,6 +8,7 @@ orbs:
   ruby: circleci/ruby@1.4.0
   node: circleci/node@5.0.3
   browser-tools: circleci/browser-tools@1.4.0
+  coveralls: coveralls/coveralls@1.0.6
 
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
@@ -61,6 +62,8 @@ jobs:
           command: 'bundle exec rails db:schema:load --trace'
           name: Database setup
       - ruby/rspec-test
+      - coveralls/upload:
+          path_to_lcov: ./coverage/lcov/project.lcov
 
 
 # Invoke jobs via workflows

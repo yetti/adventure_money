@@ -307,6 +307,7 @@ GEM
     simplecov-json (0.2.3)
       json
       simplecov
+    simplecov-lcov (0.8.0)
     simplecov_json_formatter (0.1.4)
     smart_properties (1.17.0)
     sprockets (4.2.0)
@@ -396,6 +397,7 @@ DEPENDENCIES
   shoulda-matchers
   simplecov
   simplecov-json
+  simplecov-lcov
   sprockets-rails
   stimulus-rails
   turbo-rails

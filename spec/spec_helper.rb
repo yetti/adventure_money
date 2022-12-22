@@ -3,7 +3,12 @@
 require "simplecov"
 require "simplecov-html"
 require "simplecov_json_formatter"
+require 'coveralls'
 
+Coveralls.wear!
+
+SimpleCov::Formatter::LcovFormatter.config.report_with_single_file = true
+SimpleCov.formatter = SimpleCov::Formatter::LcovFormatter
 SimpleCov.start("rails") do
   enable_coverage :branch
 
@@ -28,6 +33,7 @@ SimpleCov.start("rails") do
     source_file.lines.count < 10
   end
 
+  add_filter(/spec/)
   add_filter(/bin/)
   add_filter(/db/)
   add_filter(/vendor/)
