@@ -72,6 +72,8 @@ gem "bootsnap", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
+gem "better_html"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: [:mri, :mingw, :x64_mingw]
@@ -81,13 +83,6 @@ group :development, :test do
   gem "rubocop-performance", require: false
   gem "rubocop-shopify", require: false
   gem "rubocop-rspec", require: false
-
-  gem "rspec-rails", "~> 6.0", ">= 6.0.1"
-  gem "factory_bot_rails", "~> 6.2"
-  gem "shoulda-matchers", "~> 5.2"
-  gem "rspec-html-matchers", "~> 0.10.0"
-  gem "database_cleaner-active_record", "~> 2.0", ">= 2.0.1"
-  gem "faker", "~> 3.0"
 end
 
 group :development do
@@ -96,9 +91,34 @@ group :development do
 
   gem "foreman"
 
+  gem "better_errors"
+  gem "binding_of_caller"
+
+  gem "erb_lint", require: false
+
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+end
+
+group :test do
+  gem "capybara"
+  gem "selenium-webdriver"
+  gem "webdrivers"
+  gem "webmock"
+
+  gem "rspec-rails", "~> 6.0"
+  gem "shoulda-matchers"
+  gem "factory_bot_rails"
+  gem "faker"
+  gem "rspec-html-matchers"
+
+  gem "database_cleaner-active_record"
+  gem "rails-controller-testing"
+
+  gem "simplecov", require: false
+  gem "simplecov-json"
+  gem "rspec_junit_formatter"
 end
