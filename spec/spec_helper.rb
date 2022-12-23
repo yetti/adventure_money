@@ -2,10 +2,8 @@
 
 require "simplecov"
 require "simplecov-html"
+require "simplecov-lcov"
 require "simplecov_json_formatter"
-require 'coveralls'
-
-Coveralls.wear!
 
 SimpleCov::Formatter::LcovFormatter.config.report_with_single_file = true
 SimpleCov.formatter = SimpleCov::Formatter::LcovFormatter
