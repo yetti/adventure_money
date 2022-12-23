@@ -6,7 +6,6 @@ require "simplecov-lcov"
 require "simplecov_json_formatter"
 
 SimpleCov::Formatter::LcovFormatter.config.report_with_single_file = true
-SimpleCov.formatter = SimpleCov::Formatter::LcovFormatter
 SimpleCov.start("rails") do
   enable_coverage :branch
 
@@ -17,12 +16,13 @@ SimpleCov.start("rails") do
   # If running test in CI, generate just .json result, then we can join them later
   # else, generate the full HTML report
   if ENV["CI"]
-    formatter SimpleCov::Formatter::SimpleFormatter
+    formatter SimpleCov::Formatter::LcovFormatter
   else
     formatter SimpleCov::Formatter::MultiFormatter.new(
       [
         SimpleCov::Formatter::SimpleFormatter,
         SimpleCov::Formatter::HTMLFormatter,
+        SimpleCov::Formatter::LcovFormatter,
       ],
     )
   end
