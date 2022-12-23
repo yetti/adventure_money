@@ -4,6 +4,7 @@ set -e
 
 echo "[ bin/ci ] Setting RAILS_ENV to test"
 export RAILS_ENV=test
+export CI="true"
 
 echo "[ bin/ci ] Preparing database"
 bin/rails db:reset || bin/rails db:migrate
