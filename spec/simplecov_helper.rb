@@ -11,14 +11,17 @@ SimpleCov.start("rails") do
 
   # minimum_coverage 80
 
-  # command_name "Job #{ENV["CIRCLE_NODE_INDEX"]}" if ENV["CIRCLE_NODE_INDEX"]
+  command_name "Job #{ENV["CIRCLE_NODE_INDEX"]}" if ENV["CIRCLE_NODE_INDEX"]
 
   formatter SimpleCov::Formatter::MultiFormatter.new(
     [
+      SimpleCov::Formatter::JSONFormatter,
       SimpleCov::Formatter::HTMLFormatter,
       SimpleCov::Formatter::LcovFormatter,
     ],
   )
+
+  track_files "**/*.rb"
 
   add_filter do |source_file|
     source_file.lines.count < 10
@@ -30,4 +33,7 @@ SimpleCov.start("rails") do
   add_filter(/vendor/)
   add_filter(/node_modules/)
   add_filter(/config/)
+
+  add_filter "dip.yml"
+  add_filter "package.json"
 end
