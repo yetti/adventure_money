@@ -2,7 +2,7 @@
 
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/yetti/adventure-money/tree/main.svg?style=shield)](https://dl.circleci.com/status-badge/redirect/gh/yetti/adventure-money/tree/main)
 [![Coverage Status](https://coveralls.io/repos/github/yetti/adventure-money/badge.svg?branch=main)](https://coveralls.io/github/yetti/adventure-money?branch=main)
-[![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=yetti_adventure-money)](https://sonarcloud.io/summary/new_code?id=yetti_adventure-money)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=yetti_adventure-money&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=yetti_adventure-money)
 
 Adventure Money was [originally developed by Laszlo Pandy](http://laszlopandy.com/2007/05/13/presenting-adventure-money/) as a
 Python GUI desktop application to keep track of shared costs between friends and housemates.
