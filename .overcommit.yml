@@ -36,3 +36,7 @@ PreCommit:
   RuboCop:
     enabled: true
     command: ["bundle", "exec", "rubocop", "-A", "--parallel"]
+
+CommitMsg:
+  CapitalizedSubject:
+    enabled: false
