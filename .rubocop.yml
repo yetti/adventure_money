@@ -15,6 +15,7 @@ AllCops:
     - db/**/*
     - bin/**/*
     - tmp/**/*
+    - config/initializers/devise.rb
 
 Rails:
   Enabled: true
