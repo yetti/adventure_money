@@ -149,6 +149,7 @@ GEM
     globalid (1.0.0)
       activesupport (>= 5.0)
     hashdiff (1.0.1)
+    hiredis (0.6.3)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     io-console (0.6.0)
@@ -380,6 +381,7 @@ DEPENDENCIES
   factory_bot_rails
   faker
   foreman
+  hiredis (~> 0.6.3)
   jbuilder
   jsbundling-rails
   lograge
