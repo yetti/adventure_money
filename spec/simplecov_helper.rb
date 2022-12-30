@@ -36,4 +36,5 @@ SimpleCov.start("rails") do
 
   add_filter "dip.yml"
   add_filter "package.json"
+  add_filter "app/controllers/turbo_devise_controller.rb"
 end
