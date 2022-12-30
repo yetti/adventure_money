@@ -13,6 +13,7 @@ This is a learning project for myself to learn Rails 7, Ruby and best practices 
 
 * Podman or Docker
 * `dip` gem
+* `overcommit` gem
 
 ## Setup
 
