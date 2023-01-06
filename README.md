@@ -14,6 +14,7 @@ This is a learning project for myself to learn Rails 7, Ruby and best practices 
 * Podman or Docker
 * `dip` gem
 * `overcommit` gem
+* `foreman` gem
 
 ## Setup
 
@@ -21,6 +22,7 @@ This is a learning project for myself to learn Rails 7, Ruby and best practices 
 2. Make sure to have Podman/Docker running.
 3. Open a terminal and navigate to the project directory.
 4. Execute `dip provision` in the terminal.
+5. Install `overcommit` gem and then execute `overcommit --install` in the project directory.
 
 ## Running the app
 
