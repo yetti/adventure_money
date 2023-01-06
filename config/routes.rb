@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  get "page/home"
-
   devise_scope :user do
     # redirect users back sign-in
     get "users", to: "devise/sessions#new"
@@ -15,5 +13,5 @@ Rails.application.routes.draw do
   get "/500", to: "errors#internal_server"
 
   # Defines the root path route ("/")
-  root "page#home"
+  root "pages#home"
 end

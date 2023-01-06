@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
-class PageController < ApplicationController
+class PagesController < ApplicationController
   def home
+    # render views/pages/home.html.erb
   end
 end
