@@ -52,3 +52,6 @@ vendor/bundle
 
 # Ignore Simplecov directory
 /coverage
+
+# Ignoer RSpec state temp file
+/spec/examples.txt

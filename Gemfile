@@ -89,6 +89,8 @@ group :development, :test do
   gem "rubocop-performance", require: false
   gem "rubocop-shopify", require: false
   gem "rubocop-rspec", require: false
+
+  gem "factory_bot_rails"
 end
 
 group :development do
@@ -117,7 +119,6 @@ group :test do
 
   gem "rspec-rails", "~> 6.0"
   gem "shoulda-matchers"
-  gem "factory_bot_rails"
   gem "faker"
   gem "rspec-html-matchers"
 
