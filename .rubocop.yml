@@ -36,3 +36,6 @@ RSpec/MultipleExpectations:
 
 Bundler/DuplicatedGem:
   Enabled: false
+
+Layout/LineLength:
+  Enabled: false

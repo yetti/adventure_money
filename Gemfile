@@ -131,3 +131,5 @@ group :test do
   gem "coveralls_reborn", require: false
   gem "rspec_junit_formatter"
 end
+
+gem "rodauth-rails", "~> 1.7"
