@@ -129,6 +129,5 @@ group :test do
   gem "simplecov-lcov", require: false
   gem "simplecov-json", require: false
   gem "simplecov-cobertura", require: false
-  gem "coveralls_reborn", require: false
   gem "rspec_junit_formatter"
 end
