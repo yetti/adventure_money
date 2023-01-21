@@ -7,6 +7,7 @@ class CreateRodauth < ActiveRecord::Migration[7.0]
       t.citext :email, null: false
       t.index :email, unique: true, where: "status IN (1, 2)"
       t.string :password_hash
+      t.timestamps null: false, default: -> { "CURRENT_TIMESTAMP" }
     end
 
     # Used by the password reset feature

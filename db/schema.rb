@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_21_025106) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_21_120613) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
   enable_extension "pgcrypto"
@@ -43,6 +43,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_21_025106) do
     t.integer "status", default: 1, null: false
     t.citext "email", null: false
     t.string "password_hash"
+    t.datetime "created_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
+    t.datetime "updated_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
     t.index ["email"], name: "index_accounts_on_email", unique: true, where: "(status = ANY (ARRAY[1, 2]))"
   end
 
@@ -50,4 +52,20 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_21_025106) do
   add_foreign_key "account_password_reset_keys", "accounts", column: "id"
   add_foreign_key "account_remember_keys", "accounts", column: "id"
   add_foreign_key "account_verification_keys", "accounts", column: "id"
+  create_function :update_account_timestamps, sql_definition: <<-'SQL'
+      CREATE OR REPLACE FUNCTION public.update_account_timestamps()
+       RETURNS trigger
+       LANGUAGE plpgsql
+      AS $function$
+      BEGIN
+          NEW.updated_at = CURRENT_TIMESTAMP;
+      RETURN NEW;
+      END;
+      $function$
+  SQL
+
+
+  create_trigger :update_account_timestamps, sql_definition: <<-SQL
+      CREATE TRIGGER update_account_timestamps BEFORE UPDATE ON public.accounts FOR EACH ROW EXECUTE FUNCTION update_account_timestamps()
+  SQL
 end
