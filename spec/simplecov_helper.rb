@@ -4,6 +4,7 @@ require "simplecov"
 require "simplecov-lcov"
 require "simplecov-html"
 require "simplecov_json_formatter"
+require "simplecov-cobertura"
 
 SimpleCov::Formatter::LcovFormatter.config.report_with_single_file = true
 SimpleCov.start("rails") do
@@ -18,6 +19,7 @@ SimpleCov.start("rails") do
       SimpleCov::Formatter::JSONFormatter,
       SimpleCov::Formatter::HTMLFormatter,
       SimpleCov::Formatter::LcovFormatter,
+      SimpleCov::Formatter::CoberturaFormatter,
     ],
   )
 
