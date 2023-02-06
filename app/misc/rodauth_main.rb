@@ -3,7 +3,8 @@
 class RodauthMain < Rodauth::Rails::Auth
   configure do
     # List of authentication features that are loaded.
-    enable :create_account,
+    enable :i18n,
+      :create_account,
       :verify_account,
       :verify_account_grace_period,
       :login,

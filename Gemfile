@@ -3,7 +3,7 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "3.1.3"
+ruby "3.2.0"
 
 # All runtime config comes from the UNIX environment
 # but we use dotenv to store that in files for
@@ -78,6 +78,7 @@ gem "bootsnap", require: false
 gem "better_html"
 
 gem "rodauth-rails", "~> 1.7"
+gem "rodauth-i18n", "~> 0.7.0"
 gem "fx", "~> 0.7.0"
 
 group :development, :test do
