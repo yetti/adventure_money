@@ -31,3 +31,18 @@
 
 en:
   hello: "Hello world"
+  expense_account:
+    index:
+      title: "Accounts"
+    new:
+      title: "New Account"
+    show:
+      title: "%{account}"
+    edit:
+      title: "Editing %{account}"
+    create:
+      success: "Expense account was successfully created."
+    update:
+      success: "Expense account was successfully updated."
+    destroy:
+      success: "Expense account was successfully destroyed."

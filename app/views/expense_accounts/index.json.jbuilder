@@ -1,0 +1,3 @@
+# frozen_string_literal: true
+
+json.array!(@expense_accounts, partial: "expense_accounts/expense_account", as: :expense_account)

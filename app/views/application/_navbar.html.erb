@@ -5,7 +5,7 @@
     <div class="navbar-collapse">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <%= link_to "Accounts", root_path, class: "nav-link #{"active" if request.path.start_with?("/")}" %>
+          <%= link_to "Accounts", expense_accounts_path, class: "nav-link #{"active" if request.path.start_with?("/")}" %>
         </li>
       </ul>
     </div>

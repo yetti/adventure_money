@@ -1,0 +1,16 @@
+<% page_title("Accounts") %>
+
+<p style="color: green"><%= notice %></p>
+
+<h1><%= t("expense_account.index.title") %></h1>
+
+<div id="expense_accounts">
+  <% @expense_accounts.each do |expense_account| %>
+    <%= render expense_account %>
+    <p>
+      <%= link_to "Show this expense account", expense_account %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New expense account", new_expense_account_path %>

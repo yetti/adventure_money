@@ -8,7 +8,7 @@ namespace :coverage do
     SimpleCov.collate(Dir["coverage_results/.resultset-*.json"], "rails") do
       formatter SimpleCov::Formatter::MultiFormatter.new([
         SimpleCov::Formatter::JSONFormatter,
-        SimpleCov::Formatter::HTMLFormatter,
+        SimpleCov::Formatter::HTMLFormatter
       ])
     end
   end

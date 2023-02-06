@@ -85,10 +85,16 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: [:mri, :mingw, :x64_mingw]
 
+  gem "rspec-rails", "~> 6.0"
+  gem "shoulda-matchers"
+  gem "factory_bot_rails"
+  gem "faker"
+  gem "rspec-html-matchers"
+
+  gem "standard", "~> 1.0", require: false
   gem "rubocop", require: false
   gem "rubocop-rails", require: false
   gem "rubocop-performance", require: false
-  gem "rubocop-shopify", require: false
   gem "rubocop-rspec", require: false
 end
 
@@ -103,6 +109,8 @@ group :development do
 
   gem "erb_lint", require: false
 
+  gem "annotate"
+
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 
@@ -115,12 +123,6 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
   gem "webmock"
-
-  gem "rspec-rails", "~> 6.0"
-  gem "shoulda-matchers"
-  gem "factory_bot_rails"
-  gem "faker"
-  gem "rspec-html-matchers"
 
   gem "database_cleaner-active_record"
   gem "database_cleaner-redis"
