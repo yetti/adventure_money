@@ -1,0 +1,12 @@
+<% page_title(t("expense_account.show.title", account: @expense_account)) %>
+
+<p style="color: green"><%= notice %></p>
+
+<%= render @expense_account %>
+
+<div>
+  <%= link_to "Edit this expense account", edit_expense_account_path(@expense_account) %> |
+  <%= link_to "Back to expense accounts", expense_accounts_path %>
+
+  <%= button_to "Destroy this expense account", @expense_account, method: :delete %>
+</div>

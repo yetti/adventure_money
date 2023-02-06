@@ -36,7 +36,9 @@ module AdventureMoney
     config.time_zone = "Canberra"
     # config.eager_load_paths << Rails.root.join("extras")
 
-    # Don't generate system test files.
-    config.generators.system_tests = nil
+    config.generators.options do |g|
+      g.test_framework(:rspec)
+      g.fixture_replacement(:factory_bot)
+    end
   end
 end

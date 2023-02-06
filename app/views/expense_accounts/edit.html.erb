@@ -1,0 +1,12 @@
+<% page_title(t("expense_account.edit.title", account: @expense_account)) %>
+
+<h1><%= t("expense_account.edit.title", account: @expense_account) %></h1>
+
+<%= render "form", expense_account: @expense_account %>
+
+<br>
+
+<div>
+  <%= link_to "Show this expense account", @expense_account %> |
+  <%= link_to "Back to expense accounts", expense_accounts_path %>
+</div>
