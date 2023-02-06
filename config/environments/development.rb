@@ -44,7 +44,6 @@ Rails.application.configure do
   # Mailcatcher SMTP settings
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = { address: "127.0.0.1", port: 1025 }
-  config.action_mailer.raise_delivery_errors = false
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
