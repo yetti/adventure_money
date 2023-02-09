@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.0.1](https://github.com/yetti/adventure-money/compare/1.0.0...1.0.1) (2023-02-09)
+
+
+### Bug Fixes
+
+* remove `frozen_string_literal` from email templates ([f27eaeb](https://github.com/yetti/adventure-money/commit/f27eaeb211c95a37859fbcfc1c0a77c29b1f5278))
+
+
+### Miscellaneous
+
+* upgrade esbuild ([baaba51](https://github.com/yetti/adventure-money/commit/baaba517bab73a442817abb9515d45f94b3ebd6e))
+
 ## 1.0.0 (2023-02-09)
 
 
