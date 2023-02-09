@@ -86,6 +86,9 @@ jobs:
       - run:
           command: 'bundle exec rails db:schema:load --trace'
           name: Database setup
+      - run:
+          command: 'bundle exec rails assets:precompile'
+          name: Precompile assets
       - ruby/rspec-test
       - run:
           name: Stash Coverage Results
