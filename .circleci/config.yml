@@ -99,8 +99,6 @@ jobs:
           root: .
           paths:
             - coverage_results
-      - store_artifacts:
-          path: tmp/test_prof
 
   coverage:
     resource_class: large
@@ -126,8 +124,10 @@ jobs:
           name: Merge and check coverage
           command: |
             bundle exec rake coverage:report
-      - sonarcloud/scan
       - codecov/upload
+      - sonarcloud/scan
+      - store_artifacts:
+          path: coverage_results
       - store_artifacts:
           path: coverage
 
