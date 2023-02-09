@@ -88,10 +88,12 @@ group :development, :test do
   gem "debug", platforms: [:mri, :mingw, :x64_mingw]
 
   gem "rspec-rails", "~> 6.0"
+  gem "rspec-mocks"
   gem "shoulda-matchers"
   gem "factory_bot_rails"
   gem "faker"
   gem "rspec-html-matchers"
+  gem "email_spec"
 
   gem "standard", "~> 1.0", require: false
   gem "rubocop", require: false
