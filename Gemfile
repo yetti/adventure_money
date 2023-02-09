@@ -81,6 +81,8 @@ gem "rodauth-rails", "~> 1.7"
 gem "rodauth-i18n", "~> 0.7.0"
 gem "fx", "~> 0.7.0"
 
+gem "mailgun-ruby", "~>1.2.6"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: [:mri, :mingw, :x64_mingw]
