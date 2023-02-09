@@ -57,12 +57,16 @@ jobs:
         environment:
           POSTGRES_USER: postgres
 
+      - image: cimg/go:1.17
+      - image: cimg/redis:6.2.6
+
     environment:
       BUNDLE_JOBS: 3
       BUNDLE_RETRY: 3
       RAILS_ENV: test
       CI: 'true'
       DATABASE_URL: postgres://postgres:@localhost:5432/adventure_money_test
+      REDIS_URL: redis://localhost:6379
     parallelism: 2
     steps:
       - checkout
@@ -72,7 +76,10 @@ jobs:
           pkg-manager: yarn
       - run:
           command: 'dockerize -wait tcp://localhost:5432 -timeout 1m'
-          name: Wait for DB
+          name: Wait for Postgres
+      - run:
+          command: 'dockerize -wait tcp://localhost:6379 -timeout 1m'
+          name: Wait for Redis
       - run:
           command: 'bundle exec rails db:create --trace'
           name: Database creation
