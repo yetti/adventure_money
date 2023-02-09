@@ -21,7 +21,7 @@ require "action_cable/engine"
 Bundler.require(*Rails.groups)
 
 module AdventureMoney
-  VERSION = "0.0.0"
+  VERSION = "1.0.0"
 
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
