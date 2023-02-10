@@ -1,7 +1,8 @@
 # Adventure Money
 
+[![GitHub release (latest SemVer including pre-releases)](https://img.shields.io/github/v/release/yetti/adventure-money?include_prereleases)](https://github.com/yetti/adventure-money/releases/latest)
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/yetti/adventure-money/tree/main.svg?style=shield)](https://dl.circleci.com/status-badge/redirect/gh/yetti/adventure-money/tree/main)
-[![Coverage Status](https://coveralls.io/repos/github/yetti/adventure-money/badge.svg?branch=main)](https://coveralls.io/github/yetti/adventure-money?branch=main)
+[![codecov](https://codecov.io/gh/yetti/adventure-money/branch/main/graph/badge.svg?token=5m2K91UrBW)](https://codecov.io/gh/yetti/adventure-money)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=yetti_adventure-money&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=yetti_adventure-money)
 
 Adventure Money was [originally developed by Laszlo Pandy](http://laszlopandy.com/2007/05/13/presenting-adventure-money/) as a
