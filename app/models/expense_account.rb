@@ -21,6 +21,8 @@
 class ExpenseAccount < ApplicationRecord
   belongs_to :account
 
+  alias_attribute :owner, :account_id
+
   validates :name, presence: true
 
   def to_s
