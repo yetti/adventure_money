@@ -50,14 +50,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_06_101353) do
 
   create_table "expense_accounts", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "name", default: "UNKNOWN", null: false
+    t.uuid "account_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["account_id"], name: "index_expense_accounts_on_account_id"
   end
 
   add_foreign_key "account_login_change_keys", "accounts", column: "id"
   add_foreign_key "account_password_reset_keys", "accounts", column: "id"
   add_foreign_key "account_remember_keys", "accounts", column: "id"
   add_foreign_key "account_verification_keys", "accounts", column: "id"
+  add_foreign_key "expense_accounts", "accounts"
   create_function :update_account_timestamps, sql_definition: <<-'SQL'
       CREATE OR REPLACE FUNCTION public.update_account_timestamps()
        RETURNS trigger

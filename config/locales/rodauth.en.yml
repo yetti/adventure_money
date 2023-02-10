@@ -29,7 +29,7 @@ en:
     login_confirm_label: Confirm %{login_label}
     login_error_flash: There was an error logging in
     login_form_footer_links_heading: <h2 class="rodauth-login-form-footer-links-heading">Other Options</h2>
-    login_label: Username
+    login_label: E-mail
     login_not_valid_email_message: not a valid email address
     login_notice_flash: You have been logged in
     login_page_title: Login

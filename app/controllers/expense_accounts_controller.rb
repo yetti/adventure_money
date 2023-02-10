@@ -5,7 +5,7 @@ class ExpenseAccountsController < ApplicationController
 
   # GET /expense_accounts or /expense_accounts.json
   def index
-    @expense_accounts = ExpenseAccount.all
+    @expense_accounts = ExpenseAccount.order(name: :asc).where(account_id: current_account.id)
   end
 
   # GET /expense_accounts/1 or /expense_accounts/1.json
@@ -23,7 +23,9 @@ class ExpenseAccountsController < ApplicationController
 
   # POST /expense_accounts or /expense_accounts.json
   def create
-    @expense_account = ExpenseAccount.new(expense_account_params)
+    new_params = expense_account_params.to_h
+    new_params[:account_id] = current_account.id
+    @expense_account = ExpenseAccount.new(new_params)
 
     respond_to do |format|
       if @expense_account.save
@@ -39,7 +41,9 @@ class ExpenseAccountsController < ApplicationController
   # PATCH/PUT /expense_accounts/1 or /expense_accounts/1.json
   def update
     respond_to do |format|
-      if @expense_account.update(expense_account_params)
+      edit_params = expense_account_params.to_h
+      edit_params[:account_id] = current_account.id
+      if @expense_account.update(edit_params)
         format.html { redirect_to(expense_account_url(@expense_account), notice: t("expense_account.update.success")) }
         format.json { render(:show, status: :ok, location: @expense_account) }
       else

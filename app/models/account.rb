@@ -16,6 +16,8 @@
 #  index_accounts_on_email  (email) UNIQUE WHERE (status = ANY (ARRAY[1, 2]))
 #
 class Account < ApplicationRecord
+  has_many :expense_accounts, dependent: :destroy
+
   include Rodauth::Rails.model
   enum :status, unverified: 1, verified: 2, closed: 3
 end

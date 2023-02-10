@@ -3,13 +3,17 @@
 require "rails_helper"
 
 RSpec.describe("expense_accounts/index") do
+  let(:account) { create(:account) }
+
   before do
     assign(:expense_accounts, [
       ExpenseAccount.create!(
-        name: "Name"
+        name: "Name",
+        account_id: account.id
       ),
       ExpenseAccount.create!(
-        name: "Name"
+        name: "Name",
+        account_id: account.id
       )
     ])
   end

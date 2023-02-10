@@ -5,9 +5,12 @@ require "rails_helper"
 RSpec.describe("expense_accounts/edit") do
   let(:expense_account) do
     ExpenseAccount.create!(
-      name: "MyString"
+      name: "MyString",
+      account_id: account.id
     )
   end
+
+  let(:account) { create(:account) }
 
   before do
     assign(:expense_account, expense_account)
