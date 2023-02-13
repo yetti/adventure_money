@@ -95,7 +95,7 @@ group :development, :test do
   gem "rspec-html-matchers"
   gem "email_spec"
 
-  gem "standard", "~> 1.0", require: false
+  gem "standard", "~> 1.24", require: false
   gem "rubocop", require: false
   gem "rubocop-rails", require: false
   gem "rubocop-performance", require: false
