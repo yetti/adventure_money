@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.1.0](https://github.com/yetti/adventure-money/compare/1.0.1...1.1.0) (2023-02-26)
+
+
+### Features
+
+* add roles to user accounts ([0b12526](https://github.com/yetti/adventure-money/commit/0b12526032612df7bf820046706304cce09cb56f))
+* associate expense accounts with user that created them ([60d672f](https://github.com/yetti/adventure-money/commit/60d672f72272a6913d6638073e9012c9aa19134c))
+
+
+### Documentation
+
+* add ER diagram ([d339746](https://github.com/yetti/adventure-money/commit/d339746d7a4c267423805c5af37fca0733c0ba35))
+* update badges on README.md ([edac925](https://github.com/yetti/adventure-money/commit/edac9255d42e9649521e7413068e8a58861ff8c6))
+
+
+### Miscellaneous
+
+* configure debug rails server for vscode ([d36f6a0](https://github.com/yetti/adventure-money/commit/d36f6a0cc46c0e80947aee4a49e41ae27a667240))
+* upgrade dependencies ([ec6387e](https://github.com/yetti/adventure-money/commit/ec6387e691c2dd8710eac2292eb78e9d47186d4a))
+
 ## [1.0.1](https://github.com/yetti/adventure-money/compare/1.0.0...1.0.1) (2023-02-09)
 
 
