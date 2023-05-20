@@ -16,11 +16,17 @@
 # Uncomment the following lines to make the configuration take effect.
 
 PreCommit:
+  BundleAudit:
+    enabled: true
+    command: ["bundle", "exec", "bundle-audit", "check", "--update"]
   RuboCop:
     enabled: true
     command: ["bundle", "exec", "rubocop", "-A", "--parallel", "--format", "simple"]
 
 PrePush:
+  Brakeman:
+    enabled: true
+    command: ["bundle", "exec", "brakeman", "-q", "--no-pager", "--no-summary", "--no-progress", "--no-exit-on-warn", "--exit-on-error", "--ensure-latest", "--run-all-checks"]
   MiniTest:
     enabled: true
     command: ["bin/rails", "test"]

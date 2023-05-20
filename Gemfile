@@ -81,6 +81,12 @@ group :development do
   gem "rubocop-performance", require: false
   gem "rubocop-minitest", require: false
 
+  # Static analysis
+  gem "brakeman", require: false
+
+  # Dependency vulnerability analysis
+  gem "bundler-audit", require: false
+
   # Mocking and stubbing
   gem "factory_bot_rails"
   gem "faker"
@@ -91,4 +97,5 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+  gem "webmock"
 end
