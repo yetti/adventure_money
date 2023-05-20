@@ -16,6 +16,7 @@ def setup
     system! "bundle config set --local jobs $(nproc)"
     system! "bundle config set --local retry 3"
     system("bundle check") || system!("bundle install")
+    system! "bundle clean --force"
 
     # Install JavaScript dependencies
     system("yarn check --check-files") || system!("yarn install --frozen-lockfile")
