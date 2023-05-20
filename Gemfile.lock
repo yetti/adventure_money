@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/rails/rails.git
-  revision: fc9470aa973a8b6f1a5693bae4edec4c2b4e61aa
+  revision: 398b904c3efe00523a626103921f5c8e81ef7b7a
   branch: main
   specs:
     actioncable (7.1.0.alpha)
@@ -129,7 +129,7 @@ GEM
     debug (1.8.0)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
-    dip (7.5.0)
+    dip (7.6.0)
       thor (>= 0.20, < 2)
     error_highlight (0.5.1)
     erubi (1.12.0)
