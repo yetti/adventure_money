@@ -37,3 +37,6 @@
 
 .env
 .env.*.local
+
+# Ignore bundle gems
+/vendor/bundle
