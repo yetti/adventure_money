@@ -57,6 +57,9 @@ group :development, :test do
 
   # Needed to run Procfile-based apps
   gem "foreman"
+
+  # Git hooks
+  gem "overcommit"
 end
 
 group :development do
@@ -77,6 +80,10 @@ group :development do
   gem "rubocop-rails", require: false
   gem "rubocop-performance", require: false
   gem "rubocop-minitest", require: false
+
+  # Mocking and stubbing
+  gem "factory_bot_rails"
+  gem "faker"
 end
 
 group :test do
