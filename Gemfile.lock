@@ -125,6 +125,7 @@ GEM
       thor (>= 0.20, < 2)
     error_highlight (0.5.1)
     erubi (1.12.0)
+    foreman (0.87.2)
     globalid (1.1.0)
       activesupport (>= 5.0)
     i18n (1.13.0)
@@ -243,6 +244,7 @@ DEPENDENCIES
   debug
   dip
   error_highlight (>= 0.4.0)
+  foreman
   jbuilder
   jsbundling-rails
   pg (~> 1.1)

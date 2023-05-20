@@ -52,7 +52,11 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
 
+  # Make interacting with docker-compose easier
   gem "dip"
+
+  # Needed to run Procfile-based apps
+  gem "foreman"
 end
 
 group :development do
