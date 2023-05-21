@@ -13,10 +13,10 @@ orbs:
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
-  security:
+  'Security and linting':
     resource_class: large
     docker:
-      - image: cimg/ruby:3.2.2-node
+      - image: cimg/ruby:3.2.2-browsers
     executor: ruby/default
     steps:
       - checkout
@@ -29,14 +29,6 @@ jobs:
       - run:
           command: 'bundle exec bundle audit check --update'
           name: 'Analyse Ruby gems for security vulnerabilities'
-  linting:
-    resource_class: large
-    docker:
-      - image: cimg/ruby:3.2.2-node
-    executor: ruby/default
-    steps:
-      - checkout
-      - ruby/install-deps
       - node/install-packages:
           with-cache: true
           pkg-manager: yarn
@@ -44,18 +36,15 @@ jobs:
           format: progress
           parallel: true
           label: Inspecting with Rubocop
-  test:
+  'Test':
     resource_class: large
     docker:
       - image: cimg/ruby:3.2.2-browsers
-
       - image: cimg/postgres:14.5
         environment:
           POSTGRES_USER: postgres
-
       - image: cimg/go:1.17
       - image: cimg/redis:6.2.6
-
     environment:
       BUNDLE_JOBS: 3
       BUNDLE_RETRY: 3
@@ -97,16 +86,13 @@ jobs:
           root: .
           paths:
             - coverage_results
-
-  coverage:
+  'Code coverage':
     resource_class: large
     docker:
       - image: cimg/ruby:3.2.2-browsers
-
       - image: cimg/postgres:14.5
         environment:
           POSTGRES_USER: postgres
-
     environment:
       BUNDLE_JOBS: 3
       BUNDLE_RETRY: 3
@@ -134,12 +120,10 @@ workflows:
   verify: # This is the name of the workflow, feel free to change it to better match your workflow.
     # Inside the workflow, you define the jobs you want to run.
     jobs:
-      - security
-      - linting
-      - test:
+      - 'Security and linting'
+      - 'Test':
           requires:
-            - security
-            - linting
-      - coverage:
+            - 'Security and linting'
+      - 'Code coverage':
           requires:
-            - test
+            - 'Test'
