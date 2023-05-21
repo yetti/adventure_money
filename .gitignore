@@ -40,3 +40,6 @@
 
 # Ignore bundle gems
 /vendor/bundle
+
+# Ignore code coverage reports
+/coverage

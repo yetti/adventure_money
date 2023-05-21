@@ -1,0 +1,21 @@
+require:
+  - standard
+  - rubocop-rails
+  - rubocop-performance
+  - rubocop-minitest
+
+inherit_gem:
+  standard: config/base.yml
+
+AllCops:
+  TargetRubyVersion: 3.2
+  NewCops: enable
+  Exclude:
+    - node_modules/**/*
+    - public/**/*
+    - vendor/**/*
+
+Rails:
+  Enabled: true
+Minitest:
+  Enabled: true
