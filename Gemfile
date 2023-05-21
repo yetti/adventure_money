@@ -97,5 +97,14 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+
+  # Mock HTTP requests
   gem "webmock"
+
+  # Code coverage
+  gem "simplecov", require: false
+  gem "simplecov-lcov", require: false
+  gem "simplecov-json", require: false
+  gem "simplecov-cobertura", require: false
+  gem "rspec_junit_formatter"
 end

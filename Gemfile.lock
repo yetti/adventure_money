@@ -131,6 +131,7 @@ GEM
       reline (>= 0.3.1)
     dip (7.6.0)
       thor (>= 0.20, < 2)
+    docile (1.4.0)
     error_highlight (0.5.1)
     erubi (1.12.0)
     factory_bot (6.2.1)
@@ -229,6 +230,11 @@ GEM
     reline (0.3.4)
       io-console (~> 0.5)
     rexml (3.2.5)
+    rspec-core (3.12.2)
+      rspec-support (~> 3.12.0)
+    rspec-support (3.12.0)
+    rspec_junit_formatter (0.6.0)
+      rspec-core (>= 2, < 4, != 2.12.0)
     rubocop (1.50.2)
       json (~> 2.3)
       parallel (~> 1.10)
@@ -256,6 +262,19 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    simplecov (0.22.0)
+      docile (~> 1.1)
+      simplecov-html (~> 0.11)
+      simplecov_json_formatter (~> 0.1)
+    simplecov-cobertura (2.1.0)
+      rexml
+      simplecov (~> 0.19)
+    simplecov-html (0.12.3)
+    simplecov-json (0.2.3)
+      json
+      simplecov
+    simplecov-lcov (0.8.0)
+    simplecov_json_formatter (0.1.4)
     standard (1.28.2)
       language_server-protocol (~> 3.17.0.2)
       lint_roller (~> 1.0)
@@ -326,11 +345,16 @@ DEPENDENCIES
   rack-mini-profiler
   rails!
   redis (>= 4.0.1)
+  rspec_junit_formatter
   rubocop
   rubocop-minitest
   rubocop-performance
   rubocop-rails
   selenium-webdriver
+  simplecov
+  simplecov-cobertura
+  simplecov-json
+  simplecov-lcov
   standard (~> 1)
   stimulus-rails
   turbo-rails
