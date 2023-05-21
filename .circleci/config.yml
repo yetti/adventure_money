@@ -140,6 +140,7 @@ workflows:
       - linting
       - test:
           requires:
+            - security
             - linting
       - coverage:
           context: SonarCloud
