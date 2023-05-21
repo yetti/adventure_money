@@ -8,7 +8,6 @@ orbs:
   ruby: circleci/ruby@2.0.1
   node: circleci/node@5.1.0
   browser-tools: circleci/browser-tools@1.4.1
-  sonarcloud: sonarsource/sonarcloud@1.1.1
   codecov: codecov/codecov@3.2.4
 
 # Define a job to be invoked later in a workflow.
@@ -124,7 +123,6 @@ jobs:
           command: |
             bundle exec rake coverage:report
       - codecov/upload
-      - sonarcloud/scan
       - store_artifacts:
           path: coverage_results
       - store_artifacts:
@@ -143,6 +141,5 @@ workflows:
             - security
             - linting
       - coverage:
-          context: SonarCloud
           requires:
             - test
