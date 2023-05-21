@@ -37,3 +37,12 @@
 /app/assets/builds/*
 !/app/assets/builds/.keep
 /public/assets
+
+.env
+.env.*.local
+
+# Ignore bundle gems
+/vendor/bundle
+
+# Ignore code coverage reports
+/coverage
