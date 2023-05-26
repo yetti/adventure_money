@@ -1,5 +1,5 @@
-require "simplecov_json_formatter"
 require "simplecov-cobertura"
+require "simplecov_json_formatter"
 
 SimpleCov.start("rails") do
   # enable_coverage :branch
@@ -18,6 +18,13 @@ SimpleCov.start("rails") do
 
   track_files "**/*.rb"
 
+  add_group "Controllers", "app/controllers"
+  add_group "Channels", "app/channels"
+  add_group "Models", "app/models"
+  add_group "Mailers", "app/mailers"
+  add_group "Helpers", "app/helpers"
+  add_group "Jobs", "app/jobs"
+  add_group "Libraries", "lib"
   add_group "View Components", "app/components"
 
   add_filter do |source_file|

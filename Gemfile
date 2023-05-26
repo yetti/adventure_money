@@ -111,7 +111,7 @@ group :test do
   gem "webmock"
 
   # Code coverage
-  gem "simplecov"
-  gem "simplecov-cobertura"
-  gem "rspec_junit_formatter"
+  gem "simplecov", require: false
+  gem "simplecov-cobertura", require: false
+  gem "rspec_junit_formatter", require: false
 end
