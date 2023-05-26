@@ -78,7 +78,7 @@ jobs:
           command: 'bundle exec rails assets:precompile test'
           name: Run tests
       - run:
-          name: Stash Coverage Results
+          name: Copy Coverage Results
           command: |
             mkdir coverage_results
             cp -R coverage/.resultset.json coverage_results/.resultset-${CIRCLE_NODE_INDEX}.json
@@ -86,6 +86,8 @@ jobs:
           root: .
           paths:
             - coverage_results
+      - store_test_results:
+          path: test/reports
   coverage_reports:
     resource_class: large
     docker:
