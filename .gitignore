@@ -43,3 +43,4 @@
 
 # Ignore code coverage reports
 /coverage
+/test/reports
