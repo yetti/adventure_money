@@ -13,7 +13,7 @@ orbs:
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
-  'Security and linting':
+  security_and_linting:
     resource_class: large
     docker:
       - image: cimg/ruby:3.2.2-browsers
@@ -36,7 +36,7 @@ jobs:
           format: progress
           parallel: true
           label: Inspecting with Rubocop
-  'Test':
+  test:
     resource_class: large
     docker:
       - image: cimg/ruby:3.2.2-browsers
@@ -52,7 +52,7 @@ jobs:
       CI: 'true'
       DATABASE_URL: postgres://postgres:@localhost:5432/adventure_money_test
       REDIS_URL: redis://localhost:6379
-    parallelism: 6
+    parallelism: 3
     steps:
       - checkout
       - ruby/install-deps
@@ -75,7 +75,7 @@ jobs:
           command: 'bundle exec rails assets:precompile'
           name: Precompile assets
       - run:
-          command: 'bin/rails test:prepare test'
+          command: 'bundle exec rails assets:precompile test'
           name: Run tests
       - run:
           name: Stash Coverage Results
@@ -86,7 +86,7 @@ jobs:
           root: .
           paths:
             - coverage_results
-  'Code coverage':
+  coverage_reports:
     resource_class: large
     docker:
       - image: cimg/ruby:3.2.2-browsers
@@ -118,10 +118,10 @@ workflows:
   verify: # This is the name of the workflow, feel free to change it to better match your workflow.
     # Inside the workflow, you define the jobs you want to run.
     jobs:
-      - 'Security and linting'
-      - 'Test':
+      - security_and_linting
+      - test:
           requires:
-            - 'Security and linting'
-      - 'Code coverage':
+            - security_and_linting
+      - coverage_reports:
           requires:
-            - 'Test'
+            - test

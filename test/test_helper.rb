@@ -1,9 +1,13 @@
 ENV["RAILS_ENV"] = "test"
+
+# Simplecov MUST run before the application is initialized.
+# https://github.com/simplecov-ruby/simplecov#getting-started
+require "simplecov"
+
 require_relative "../config/environment"
 require "rails/test_help"
 
 require "webmock"
-require "simplecov"
 
 class ActiveSupport::TestCase
   # Run tests in parallel with specified workers

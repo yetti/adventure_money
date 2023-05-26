@@ -27,7 +27,7 @@ def setup
     # end
 
     log "== Resetting and preparing database =="
-    system! "bin/rails db:reset || bin/rails db:migrate"
+    system! "bin/rails db:reset || bin/rails db:prepare"
 
     log "== Removing old logs and tempfiles =="
     system! "bin/rails log:clear tmp:clear"

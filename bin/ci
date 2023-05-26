@@ -21,11 +21,8 @@ bundle exec bundle audit check --update
 echo "[ bin/ci ] Linting source"
 bundle exec rubocop -A --parallel
 
-echo "[ bin/erb_lint ] Linting ERB"
-bin/erb_lint
-
 echo "[ bin/ci ] Running tests"
-bundle exec rspec
+bundle exec rails assets:precompile test
 
 echo "[ bin/ci ] Done"
 
