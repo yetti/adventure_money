@@ -6,12 +6,16 @@ require "rails/all"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+if %w[development test].include? ENV["RAILS_ENV"]
+  Dotenv::Railtie.load
+end
+
 module AdventureMoney
   VERSION = "0.0.0"
 
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 7.1
+    config.load_defaults 7.0
 
     # Configuration for the application, engines, and railties goes here.
     #

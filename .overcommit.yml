@@ -29,7 +29,7 @@ PrePush:
     command: ["bundle", "exec", "brakeman", "-q", "--no-pager", "--no-summary", "--no-progress", "--no-exit-on-warn", "--exit-on-error", "--ensure-latest", "--run-all-checks"]
   MiniTest:
     enabled: true
-    command: ["bin/rails", "test"]
+    command: ["bundle", "exec", "rails", "test"]
 
 CommitMsg:
   CapitalizedSubject:

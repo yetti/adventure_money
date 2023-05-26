@@ -1,0 +1,30 @@
+# frozen_string_literal: true
+
+class SiteNavigationComponent < ViewComponent::Base
+  def navbar_link(label = "Dashboard", path = root_path, mobile = false)
+    link_to label, path, class: navigation_style(path, mobile), aria: aria_attrs(path)
+  end
+
+  def navigation_style(path = root_path, mobile = false)
+    style = if helpers.current_page?(path)
+      "bg-gray-900 text-white"
+    else
+      "text-gray-300 hover:bg-gray-700 hover:text-white"
+    end
+    if mobile
+      "#{style} block rounded-md px-3 py-2 text-base font-medium"
+    else
+      "#{style} rounded-md px-3 py-2 text-sm font-medium"
+    end
+  end
+
+  def aria_attrs(path = root_path)
+    aria = {}
+
+    if helpers.current_page?(path)
+      aria[:current] = "page"
+    end
+
+    aria
+  end
+end
