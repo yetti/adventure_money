@@ -19,7 +19,7 @@ def setup
     system! "bundle clean --force"
 
     # Install JavaScript dependencies
-    system("yarn check --check-files") || system!("yarn install --frozen-lockfile")
+    system!("yarn install --check-files --frozen-lockfile")
 
     # puts "\n== Copying sample files =="
     # unless File.exist?("config/database.yml")
