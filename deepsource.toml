@@ -1,0 +1,50 @@
+version = 1
+
+test_patterns = ["test/**/*.rb"]
+
+exclude_patterns = [
+  "/.circleci",
+  "/.github",
+  "/.dockerdev",
+  "/bin",
+  "/db",
+  "/vendor",
+  "/node_modules",
+  "/config"
+]
+
+[[analyzers]]
+name = "test-coverage"
+
+[[analyzers]]
+name = "sql"
+
+[[analyzers]]
+name = "shell"
+
+[[analyzers]]
+name = "secrets"
+
+[[analyzers]]
+name = "ruby"
+
+[[analyzers]]
+name = "javascript"
+
+  [analyzers.meta]
+  environment = [
+    "nodejs",
+    "browser"
+  ]
+
+[[transformers]]
+name = "rubocop"
+
+[[transformers]]
+name = "standardrb"
+
+[[transformers]]
+name = "prettier"
+
+[[transformers]]
+name = "standardjs"
