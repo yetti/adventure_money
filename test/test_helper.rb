@@ -8,6 +8,7 @@ require_relative "../config/environment"
 require "rails/test_help"
 
 require "webmock"
+require "factory_bot_rails"
 
 class ActiveSupport::TestCase
   # Run tests in parallel with specified workers
