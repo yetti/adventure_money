@@ -32,6 +32,10 @@
 en:
   hello: "Hello world"
   accounts:
+    title: "Accounts"
+    add_text: "Add Account"
+    edit_text: "Edit"
+    no_accounts: "You have no accounts."
     create:
       success: "Account was successfully created."
     update:

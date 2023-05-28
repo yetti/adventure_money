@@ -12,8 +12,9 @@
         </div>
         <div class="hidden md:block">
           <div class="ml-10 flex items-baseline space-x-4">
-            <%= navbar_link "Dashboard", root_path %>
-            <%= navbar_link "About", about_path %>
+            <%= navbar_link "Dashboard", root_path, false, current_page?(controller: "static_page", action: "home") %>
+            <%= navbar_link "Accounts", accounts_path, false, current_page?(controller: "accounts") %>
+            <%= navbar_link "About", about_path, false, current_page?(controller: "static_page", action: "about") %>
           </div>
         </div>
       </div>
@@ -74,8 +75,9 @@
   <!-- Mobile menu, show/hide based on menu state. -->
   <div data-dropdown-target="menu" class="md:hidden" id="mobile-menu">
     <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
-      <%= navbar_link "Dashboard", root_path, true %>
-      <%= navbar_link "About", about_path, true %>
+      <%= navbar_link "Dashboard", root_path, true, current_page?(controller: "static_page", action: "home") %>
+      <%= navbar_link "Accounts", accounts_path, true, current_page?(controller: "accounts") %>
+      <%= navbar_link "About", about_path, true, current_page?(controller: "static_page", action: "about") %>
     </div>
     <div class="border-t border-gray-700 pb-3 pt-4">
       <div class="flex items-center px-5">
