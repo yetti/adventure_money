@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+ set -e
+
+ printf "\n== Running unit tests ==\n"
+ bin/rails test
+
+ printf "\n== Running system tests ==\n"
+ bin/rails test:system
+
+ printf "\n== Linting Ruby code ==\n"
+ bin/bundle exec rubocop -A
+
+ printf "\n== Linting ERB templates ==\n"
+ bin/bundle exec erblint --lint-all --autocorrect
+
+ printf "\n== Analysing code for security vulnerabilities ==\n"
+ printf "\nOutput will be in tmp/brakeman.html, which can be viewed in a browser.\n"
+ bin/bundle exec brakeman -q -o ./tmp/brakeman.html
+
+ printf "\n== Analysing Ruby gems for security vulnerabilities ==\n"
+ bin/bundle exec bundle audit check --update
+
+ printf "\n== Clobbering pre-compiled assets ==\n"
+ bin/rails assets:clobber
+
+ printf "\n== Done ==\n"

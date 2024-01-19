@@ -9,6 +9,7 @@ services:
     volumes:
       - ..:/workspace:cached
       - bundle_cache:/bundle
+      - zinit_plugins:/root/.local/share/zinit/plugins
 
     ports:
       - "3000:3000"
@@ -51,3 +52,4 @@ services:
 volumes:
   postgres-data:
   bundle_cache:
+  zinit_plugins:

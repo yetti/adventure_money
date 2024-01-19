@@ -1,5 +1,5 @@
 {
-  "name": "MyApp",
+  "name": "adv-money",
   "dockerComposeFile": "docker-compose.yml",
   "service": "app",
   "workspaceFolder": "/workspace",
@@ -14,11 +14,10 @@
         "ms-azuretools.vscode-docker",
         "ms-vscode-remote.vscode-remote-extensionpack",
         "Shopify.ruby-lsp",
-        "castwide.solargraph",
-        "misogi.ruby-rubocop",
         "KoichiSasada.vscode-rdbg",
         "eamodio.gitlens",
-        "vinirossa.vscode-gitandgithub-pack"
+        "vinirossa.vscode-gitandgithub-pack",
+        "misogi.ruby-rubocop"
       ]
     }
   },
@@ -33,6 +32,7 @@
   },
   "forwardPorts": [
     3000,
-    5432
+    5432,
+    8025
   ]
 }

@@ -1,0 +1,27 @@
+require:
+  - standard
+  - rubocop-rails
+  - rubocop-minitest
+  - rubocop-performance
+  - rubocop-capybara
+  - rubocop-factory_bot
+
+inherit_gem:
+  standard: config/base.yml
+
+AllCops:
+  NewCops: enable
+  TargetRubyVersion: 3.2.2
+  Exclude:
+    - tmp/**/*
+    - bin/**/*
+    - vendor/**/*
+    - node_modules/**/*
+    - db/**/*
+    - public/**/*
+    - coverage/**/*
+
+Rails:
+  Enabled: true
+Minitest:
+  Enabled: true

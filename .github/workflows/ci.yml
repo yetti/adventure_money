@@ -1,0 +1,92 @@
+# This workflow will install a prebuilt Ruby version, install dependencies, and
+# run tests and linters.
+name: "Ruby on Rails CI"
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Ruby and gems
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      # Add or replace any other lints here
+      - name: Lint Ruby files
+        run: bin/bundle exec rubocop -A
+
+      - name: Lint ERB templates
+        run: bin/bundle exec erblint --lint-all --autocorrect
+
+      # Add or replace any other security checks here
+      - name: Security audit application code
+        run: bin/bundle exec brakeman --format github --no-pager --no-exit-on-warn
+
+      - name: Security audit dependencies
+        run: bin/bundle exec bundle audit check --update
+
+  test:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:15-alpine
+        ports:
+          - "5432:5432"
+        env:
+          POSTGRES_DB: adventure_money_test
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+      redis:
+        image: redis:7-alpine
+        ports:
+          - "6379:6379"
+        options: --entrypoint redis-server
+    env:
+      CI: true
+      RAILS_ENV: test
+      DATABASE_URL: "postgres://postgres:postgres@localhost:5432/adventure_money_test"
+      REDIS_URL: "redis://localhost:6379/0"
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Add or replace dependency steps here
+      - name: Install Ruby and gems
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+      - name: Install NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "yarn"
+      - name: Install NodeJS packages
+        run: yarn install --frozen-lockfile
+
+      # Add or replace database setup steps here
+      - name: Set up database schema
+        run: bin/rails db:schema:load
+
+      # Add or replace test runners here
+      - name: Precompile assets
+        run: bin/rails assets:precompile
+
+      - name: Run unit tests
+        run: bin/rails test
+
+      - name: Run system tests
+        run: bin/rails test:system
+
+      # Add or replace any test coverage reports here
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          verbose: true

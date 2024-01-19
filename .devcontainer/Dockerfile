@@ -24,6 +24,7 @@ RUN npm install -g commitizen cz-conventional-changelog
 RUN echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
 
 # Install default Ruby gems
+RUN gem update --system
 RUN gem install bundler rails foreman rubocop solargraph
 
 # Enable jemalloc and YJIT

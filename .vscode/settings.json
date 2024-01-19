@@ -1,5 +1,9 @@
 {
   "dotfiles.repository": "yetti/dotfiles",
   "dotfiles.targetPath": "~/dotfiles",
-  "dotfiles.installCommand": "setup.sh"
+  "dotfiles.installCommand": "setup.sh",
+  "rubyLsp.enableExperimentalFeatures": true,
+  "rubyLsp.yjit": true,
+  "rubyLsp.formatter": "rubocop",
+  "ruby.rubocop.useBundler": true
 }
