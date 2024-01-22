@@ -7,6 +7,8 @@ require "rails/all"
 Bundler.require(*Rails.groups)
 
 module AdventureMoney
+  VERSION = "0.0.0"
+
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.1
@@ -26,5 +28,8 @@ module AdventureMoney
 
     # Add view components to autoload paths
     config.autoload_paths << Rails.root.join("app/components")
+
+    # Expose application version in config
+    config.version = VERSION
   end
 end
