@@ -2,12 +2,17 @@ require_relative "boot"
 
 require "rails/all"
 
+require "json"
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
 module AdventureMoney
-  VERSION = "0.0.0"
+  manifest_file = File.read(".release-please-manifest.json")
+  manifest_data = JSON.parse(manifest_file)
+
+  VERSION = manifest_data["."]
 
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
@@ -28,8 +33,5 @@ module AdventureMoney
 
     # Add view components to autoload paths
     config.autoload_paths << Rails.root.join("app/components")
-
-    # Expose application version in config
-    config.version = VERSION
   end
 end
