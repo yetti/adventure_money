@@ -1,8 +1,8 @@
 # adventure money
 
-[![GitHub release (latest SemVer including pre-releases)](https://img.shields.io/github/v/release/yetti/adventure-money?include_prereleases)](https://github.com/yetti/adventure-money/releases/latest)
-[![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/yetti/adventure-money/ci.yml?event=push)](https://github.com/yetti/adventure-money/actions/workflows/ci.yml)
-[![codecov](https://codecov.io/gh/yetti/adventure-money/graph/badge.svg?token=BC51K08ZUG)](https://codecov.io/gh/yetti/adventure-money)
+[![GitHub release (latest SemVer including pre-releases)](https://img.shields.io/github/v/release/yetti/adventure_money?include_prereleases)](https://github.com/yetti/adventure_money/releases/latest)
+[![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/yetti/adventure_money/ci.yml?event=push)](https://github.com/yetti/adventure_money/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/gh/yetti/adventure_money/graph/badge.svg?token=BC51K08ZUG)](https://codecov.io/gh/yetti/adventure_money)
 
 Manage shared expenses.
 
