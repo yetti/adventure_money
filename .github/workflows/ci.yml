@@ -53,6 +53,7 @@ jobs:
       RAILS_ENV: test
       DATABASE_URL: "postgres://postgres:postgres@localhost:5432/adventure_money_test"
       REDIS_URL: "redis://localhost:6379/0"
+      CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -85,6 +86,9 @@ jobs:
         run: bin/rails test:system
 
       # Add or replace any test coverage reports here
+      # - name: Upload coverage to Codacy
+      #   run: bash <(curl -Ls https://coverage.codacy.com/get.sh) report -r ./coverage/coverage.xml
+
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
         with:
