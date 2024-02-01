@@ -8,7 +8,8 @@ FROM registry.docker.com/library/ruby:$RUBY_VERSION-slim-bookworm
 RUN apt-get update -qq && \
   apt-get install --no-install-recommends -y apt-utils build-essential curl git libpq-dev libvips node-gyp pkg-config python-is-python3 \
   iproute2 openssh-client postgresql-client vim libjemalloc2 gnupg2 direnv fzy \
-  && apt-get clean
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/*
 
 # Install JavaScript dependencies
 ARG NODE_VERSION=18.18.1
