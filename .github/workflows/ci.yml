@@ -86,8 +86,8 @@ jobs:
         run: bin/rails test:system
 
       # Add or replace any test coverage reports here
-      - name: Upload coverage to Codacy
-        run: bash <(curl -Ls https://coverage.codacy.com/get.sh) report -r ./coverage/coverage.xml
+      # - name: Upload coverage to Codacy
+      #   run: bash <(curl -Ls https://coverage.codacy.com/get.sh) report -r ./coverage/coverage.xml
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
