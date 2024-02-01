@@ -5,9 +5,8 @@ ARG RUBY_VERSION=3.2.2
 FROM registry.docker.com/library/ruby:$RUBY_VERSION-slim-bookworm
 
 # Install packages needed to build gems and node modules
-RUN apt-get update -qq && \
-  apt-get install --no-install-recommends -y apt-utils build-essential curl git libpq-dev libvips node-gyp pkg-config python-is-python3 \
-  iproute2 openssh-client postgresql-client vim libjemalloc2 gnupg2 direnv fzy \
+RUN apt-get update -qq \
+  && apt-get install --no-install-recommends -y apt-utils build-essential curl git libpq-dev libvips node-gyp pkg-config python-is-python3 iproute2 openssh-client postgresql-client vim libjemalloc2 gnupg2 direnv fzy \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
