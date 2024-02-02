@@ -3,3 +3,9 @@
     <span class="fs-4"><%= t("app_name") %></span>
   <% end %>
 </header>
+
+<% flash.each do |type, msg| %>
+  <div class="alert alert-<%= type %>">
+    <%= msg %>
+  </div>
+<% end %>

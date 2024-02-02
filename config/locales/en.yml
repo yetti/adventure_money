@@ -29,3 +29,8 @@
 
 en:
   app_name: "Adventure Money"
+  auth:
+    register: "Register"
+    log_in: "Log in"
+  rodauth:
+    logout_button: "Log out"
