@@ -6,6 +6,7 @@
 
 # Ignore IntelliJ config
 /.idea
+.attach_*
 
 # Ignore bundler config.
 /.bundle

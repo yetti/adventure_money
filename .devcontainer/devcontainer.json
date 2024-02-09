@@ -18,7 +18,9 @@
         "eamodio.gitlens",
         "vinirossa.vscode-gitandgithub-pack",
         "misogi.ruby-rubocop",
-        "codacy-app.codacy"
+        "codacy-app.codacy",
+        "connorshea.vscode-ruby-test-adapter",
+        "MateuszDrewniak.ruby-test-runner"
       ]
     }
   },

@@ -1,7 +1,5 @@
 <h1 class="text-body-emphasis">Get started with Adventure Money</h1>
 <p class="fs-5 col-md-8">Quickly and easily track shared expenses with friends, family and colleagues.</p>
-<% if rodauth.logged_in? %>
-  <p class="fs-5 col-md-8"><%= render "rodauth/logout_form" %></p>
-<% else %>
+<% if !rodauth.logged_in? %>
   <p class="fs-5 col-md-8"><%= link_to t("auth.register"), rodauth.create_account_path %> or <%= link_to t("auth.log_in"), rodauth.login_path %>.</p>
 <% end %>
