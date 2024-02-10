@@ -143,6 +143,7 @@ GEM
     globalid (1.2.1)
       activesupport (>= 6.1)
     hashdiff (1.1.0)
+    hashie (5.0.0)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     io-console (0.7.2)
@@ -200,6 +201,13 @@ GEM
       racc (~> 1.4)
     nokogiri (1.16.2-x86_64-linux)
       racc (~> 1.4)
+    omniauth (2.1.2)
+      hashie (>= 3.4.6)
+      rack (>= 2.2.3)
+      rack-protection
+    omniauth-rails_csrf_protection (1.0.1)
+      actionpack (>= 4.2)
+      omniauth (~> 2.0)
     parallel (1.24.0)
     parser (3.3.0.5)
       ast (~> 2.4.1)
@@ -219,6 +227,9 @@ GEM
     rack (3.0.9)
     rack-mini-profiler (3.3.0)
       rack (>= 1.2.0)
+    rack-protection (4.0.0)
+      base64 (>= 0.1.0)
+      rack (>= 3.0.0, < 4)
     rack-session (2.0.0)
       rack (>= 3.0.0)
     rack-test (2.1.0)
@@ -391,6 +402,8 @@ DEPENDENCIES
   jsbundling-rails
   lograge (~> 0.14.0)
   memory_profiler
+  omniauth
+  omniauth-rails_csrf_protection
   pg (~> 1.1)
   propshaft
   puma (>= 5.0)
