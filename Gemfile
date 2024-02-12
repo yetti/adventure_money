@@ -92,7 +92,7 @@ group :development do
   gem "stackprof"
 
   # Annotate models and routes
-  gem "annotaterb", "~> 4.4"
+  gem "annotaterb", "~> 4.5"
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
