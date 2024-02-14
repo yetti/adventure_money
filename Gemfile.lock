@@ -82,6 +82,11 @@ GEM
     ast (2.4.2)
     attr_required (1.0.2)
     base64 (0.2.0)
+    bcrypt (3.1.20)
+    better_errors (2.10.1)
+      erubi (>= 1.0.0)
+      rack (>= 0.9.0)
+      rouge (>= 1.0.0)
     better_html (2.0.2)
       actionview (>= 6.0)
       activesupport (>= 6.0)
@@ -92,6 +97,8 @@ GEM
     bigdecimal (3.1.6)
     bindata (2.4.15)
     bindex (0.8.1)
+    binding_of_caller (1.0.0)
+      debug_inspector (>= 0.0.1)
     bootsnap (1.17.1)
       msgpack (~> 1.2)
     brakeman (6.1.1)
@@ -120,6 +127,13 @@ GEM
     debug (1.9.1)
       irb (~> 1.10)
       reline (>= 0.3.8)
+    debug_inspector (1.2.0)
+    devise (4.9.3)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0)
+      responders
+      warden (~> 1.2.3)
     docile (1.4.0)
     dotenv (2.8.1)
     dotenv-rails (2.8.1)
@@ -175,6 +189,15 @@ GEM
       faraday (~> 2.0)
       faraday-follow_redirects
     language_server-protocol (3.17.0.3)
+    launchy (2.5.2)
+      addressable (~> 2.8)
+    letter_opener (1.8.1)
+      launchy (>= 2.2, < 3)
+    letter_opener_web (2.0.0)
+      actionmailer (>= 5.2)
+      letter_opener (~> 1.7)
+      railties (>= 5.2)
+      rexml
     lint_roller (1.1.0)
     lograge (0.14.0)
       actionpack (>= 4)
@@ -244,6 +267,7 @@ GEM
       tzinfo
       validate_url
       webfinger (~> 2.0)
+    orm_adapter (0.5.0)
     parallel (1.24.0)
     parser (3.3.0.5)
       ast (~> 2.4.1)
@@ -322,7 +346,11 @@ GEM
       io-console (~> 0.5)
     request_store (1.5.1)
       rack (>= 1.4)
+    responders (3.1.1)
+      actionpack (>= 5.2)
+      railties (>= 5.2)
     rexml (3.2.6)
+    rouge (4.2.0)
     rubocop (1.59.0)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
@@ -407,6 +435,8 @@ GEM
       activesupport (>= 5.2.0, < 8.0)
       concurrent-ruby (~> 1.0)
       method_source (~> 1.0)
+    warden (1.2.9)
+      rack (>= 2.0.9)
     web-console (4.2.1)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -443,12 +473,15 @@ PLATFORMS
 
 DEPENDENCIES
   annotaterb (~> 4.4)
+  better_errors
+  binding_of_caller
   bootsnap
   brakeman (~> 6.1)
   bundler-audit (~> 0.9.1)
   capybara
   cssbundling-rails
   debug
+  devise
   dotenv-rails
   erb_lint
   factory_bot_rails
@@ -456,6 +489,7 @@ DEPENDENCIES
   foreman
   jbuilder
   jsbundling-rails
+  letter_opener_web
   lograge (~> 0.14.0)
   memory_profiler
   omniauth

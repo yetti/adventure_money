@@ -63,6 +63,7 @@ gem "bootsnap", require: false
 gem "view_component", "~> 3.10"
 
 # Authentication
+gem "devise"
 gem "omniauth"
 gem "omniauth-rails_csrf_protection"
 gem "omniauth_openid_connect"
@@ -98,6 +99,13 @@ group :development do
 
   # Annotate models and routes
   gem "annotaterb", "~> 4.4"
+
+  # view emails in the browser instead of sending them
+  gem "letter_opener_web"
+
+  # improve the error page
+  gem "better_errors"
+  gem "binding_of_caller"
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
