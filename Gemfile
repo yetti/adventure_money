@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "3.2.2"
+ruby "3.3.0"
 
 # Use dotenv to load environment variables for development and testing
 gem "dotenv-rails", groups: [:development, :test]
