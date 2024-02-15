@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "3.2.2"
+ruby "3.3.0"
 
 # Use dotenv to load environment variables for development and testing
 gem "dotenv-rails", groups: [:development, :test]
@@ -62,9 +62,15 @@ gem "bootsnap", require: false
 # Reusable view components
 gem "view_component", "~> 3.10"
 
+# Authentication
+gem "rodauth-rails", "~> 1.13"
+gem "rodauth-i18n", "~> 0.7.1"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[mri windows]
+
+  gem "ruby-lsp-rails"
 
   gem "standard"
   gem "rubocop-rails"
@@ -93,6 +99,9 @@ group :development do
 
   # Annotate models and routes
   gem "annotaterb", "~> 4.4"
+
+  # View emails in the browser instead of sending them
+  gem "letter_opener_web", "~> 2.0"
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"

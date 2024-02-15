@@ -9,7 +9,11 @@ require "webmock/minitest"
 module ActiveSupport
   class TestCase
     # Run tests in parallel with specified workers
-    parallelize(workers: :number_of_processors)
+    if ENV["CI"].present? || ENV["COVERAGE"].present?
+      parallelize(workers: :number_of_processors)
+    else
+      parallelize(workers: 1)
+    end
 
     # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
     fixtures :all

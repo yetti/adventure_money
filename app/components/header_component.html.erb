@@ -1,5 +1,14 @@
 <header class="d-flex align-items-center pb-3 mb-5 border-bottom">
-  <%= link_to root_url, class: "d-flex align-items-center text-body-emphasis text-decoration-none" do %>
-    <span class="fs-4"><%= t("app_name") %></span>
+  <%= link_to root_url, class: "d-flex flex-fill align-items-center text-body-emphasis text-decoration-none" do %>
+    <span class="fs-4"><i class="bi bi-piggy-bank"></i> <%= t("app_name") %></span>
+  <% end %>
+  <% if helpers.rodauth.logged_in? %>
+    <span class="fs-5"><%= render "rodauth/logout_form" %></span>
+  <% else %>
+    <span class="fs-5"><%= link_to t("auth.register"), helpers.rodauth.create_account_path, class: "btn p-0" %><span class="fs-6 ps-2 pe-2">//</span><%= link_to t("auth.log_in"), helpers.rodauth.login_path, class: "btn p-0" %></span>
   <% end %>
 </header>
+
+<% flash.each do |type, msg| %>
+  <%= render System::AlertComponent.new(type: type, message: msg) %>
+<% end %>
