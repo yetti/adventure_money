@@ -218,7 +218,7 @@ GEM
     parser (3.3.0.5)
       ast (~> 2.4.1)
       racc
-    pg (1.5.4)
+    pg (1.5.5)
     prism (0.21.0)
     propshaft (0.8.0)
       actionpack (>= 7.0.0)
@@ -443,7 +443,7 @@ DEPENDENCIES
   letter_opener_web (~> 2.0)
   lograge (~> 0.14.0)
   memory_profiler
-  pg (~> 1.1)
+  pg (~> 1.5)
   propshaft
   puma (>= 5.0)
   rack-mini-profiler
