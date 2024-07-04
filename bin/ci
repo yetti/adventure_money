@@ -2,10 +2,10 @@
 
 set -e
 
-echo "[ bin/ci ] Setting RAILS_ENV =="
+echo "[ bin/ci ] Setting RAILS_ENV"
 export RAILS_ENV=test
 
-echo "[ bin/ci ] Preparing database =="
+echo "[ bin/ci ] Preparing database"
 bundle exec rails db:prepare
 
 echo "[ bin/ci ] Running Rubocop"
@@ -27,7 +27,7 @@ bundle exec bundle audit check --update
 echo "[ bin/ci ] Running tests"
 bundle exec rails test
 
-echo "[ bin/ci ] Unsetting RAILS_ENV =="
+echo "[ bin/ci ] Unsetting RAILS_ENV"
 unset RAILS_ENV
 
 echo "[ bin/ci ] Done"
