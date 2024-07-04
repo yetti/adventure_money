@@ -45,7 +45,8 @@
   "forwardPorts": [
     3000,
     5432,
-    6080
+    6080,
+    1080
   ],
   "portsAttributes": {
     "6080": {
