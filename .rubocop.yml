@@ -18,3 +18,4 @@ AllCops:
     - vendor/**/*
     - public/**/*
     - coverage/**/*
+    - docs/**/*

@@ -39,4 +39,7 @@ RUN curl -sS https://starship.rs/install.sh | sh -s -- --yes
 # Install zinit
 RUN bash -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-continuum/zinit/HEAD/scripts/install.sh)"
 
+# Install ADR (https://adr.github.io/) tools
+RUN npm install -g adr
+
 WORKDIR /workspace
