@@ -8,6 +8,7 @@ exclude:
   - '**/coverage/**/*'
   - '**/public/**/*'
   - '**/docs/**/*'
+  - '**/views/devise/**/*'
 linters:
   ErbSafety:
     enabled: true
