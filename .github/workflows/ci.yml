@@ -1,0 +1,101 @@
+# This workflow will install a prebuilt Ruby version, install dependencies, and
+# run tests and linters.
+name: "Code Quality & Tests"
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+  workflow_dispatch:
+concurrency:
+  group: "${{ github.workflow }} @ ${{ github.event.pull_request.head.label || github.head_ref || github.ref }}"
+  cancel-in-progress: true
+jobs:
+  code_quality:
+    runs-on: ubuntu-latest
+    env:
+      CI: true
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Ruby and gems
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      # Add or replace any other lints here
+      - name: Rubocop - Lint Ruby code
+        run: bin/bundle exec rubocop
+
+      - name: ERBLint - Lint ERB templates
+        run: bin/bundle exec erblint --lint-all
+
+      # Add or replace any other security checks here
+      - name: Brakeman - Security audit application code
+        run: bin/bundle exec brakeman --format github --no-pager --no-exit-on-warn
+
+      - name: Bundler audit - Check for vulnerable dependencies
+        run: bin/bundle exec bundle audit check --update
+
+  test:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:15-alpine
+        ports:
+          - "5432:5432"
+        env:
+          CI: true
+          POSTGRES_DB: adventure_money_test
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+
+        options: >-
+          --mount type=tmpfs,destination=/var/lib/postgresql/data
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 500ms
+          --health-retries 5
+      redis:
+        image: redis:7-alpine
+        ports:
+          - "6379:6379"
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 500ms
+          --health-retries 5
+          --entrypoint redis-server
+    env:
+      CI: true
+      RAILS_ENV: test
+      DATABASE_URL: "postgres://postgres:postgres@localhost:5432/adventure_money_test"
+      REDIS_URL: "redis://localhost:6379/0"
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Add or replace dependency steps here
+      - name: Install Ruby and gems
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      # Add or replace database setup steps here
+      - name: Set up database schema
+        run: bin/rails db:schema:load
+
+      # Prepare the test database
+      - name: Prepare the test database
+        run: bin/rails db:reset
+
+      # Add or replace test runners here
+      - name: Run tests
+        run: bundle exec rails test:system
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          verbose: true # optional (default = false)

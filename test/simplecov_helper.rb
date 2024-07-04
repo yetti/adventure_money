@@ -1,4 +1,10 @@
 require "simplecov"
+require "simplecov-cobertura"
+
+SimpleCov.formatters = SimpleCov::Formatter::MultiFormatter.new([
+  SimpleCov::Formatter::HTMLFormatter,
+  SimpleCov::Formatter::CoberturaFormatter
+])
 
 SimpleCov.start "rails" do
   add_filter do |source_file|
