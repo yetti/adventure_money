@@ -21,7 +21,16 @@
       "type": "rdbg",
       "name": "Debug test file with rdbg",
       "request": "launch",
-      "script": "${env:GEM_HOME}/bin/rspec",
+      "script": "${env:GEM_HOME}/bin/rails test",
+      "args": [
+        "${file}"
+      ]
+    },
+    {
+      "type": "rdbg",
+      "name": "Debug system test file with rdbg",
+      "request": "launch",
+      "script": "${env:GEM_HOME}/bin/rails test:system",
       "args": [
         "${file}"
       ]
@@ -30,7 +39,16 @@
       "type": "rdbg",
       "name": "Debug test at line with rdbg",
       "request": "launch",
-      "script": "${env:GEM_HOME}/bin/rspec",
+      "script": "${env:GEM_HOME}/bin/rails test",
+      "args": [
+        "${file}:${lineNumber}"
+      ]
+    },
+    {
+      "type": "rdbg",
+      "name": "Debug system test at line with rdbg",
+      "request": "launch",
+      "script": "${env:GEM_HOME}/bin/rails test:system",
       "args": [
         "${file}:${lineNumber}"
       ]

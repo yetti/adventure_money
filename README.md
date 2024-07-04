@@ -1,31 +1,26 @@
-# Ruby on Rails devcontainer based development
+# Adventure Money
 
-Based on [robzolkos/rails-devcontainer](https://github.com/robzolkos/rails-devcontainer)
+Manage shared expenses.
 
-This devcontainer contains:
+A Ruby on Rails implementation of [Lazslo Pandy's Adventure Money](http://laszlopandy.com/2007/05/13/presenting-adventure-money/).
 
-- Ruby 3.3.2
-- Postgres latest
-- Redis latest
-- mailcrab latest
+## Setup
 
-You can update the Dockerfile and `docker-compose.yml` to add any other dependencies you may need.
+1. Clone project from GitHub
+2. Open project in VSCode
+3. Load the project in a devcontainer
+4. Run `bin/setup` to install dependencies
 
-If using [OrbStack](https://orbstack.dev/), there are labels given to services in the `docker-compose.yml` to allow access using local domain names. They can be updated as required.
+## Running the app locally
 
-Make sure you have the [Remote Development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack) extension pack installed in VS Code.
+- `bin/dev`
 
-## Usage
+## Tests and CI
 
-1. Clone this repo with the name of your app
-2. `cd` into it
-3. Start vscode and it will prompt you to start the project in a dev container - yes!
-4. Rename the app in `devcontainer.json`
-5. Customise the services in `docker-compose.json`
-6. `rails new . -d postgresql -c tailwind -j esbuild` (or whatever)
-7. Open the workspace in the container
-8. `bin/dev` to start normal rails dev servers
+- `bin/ci` contains all the test and checks for the app
+- `tmp/test.log` will use the production logging format not the development one
 
-### Database config sample
+## Deployment
 
-- see the `database.yml.example` on how to set the `host` for the database. As the database is in docker you need to give the docker host name `db` or the ENV VAR `DB_HOST`
+- All runtime configuration should be supplied in the UNIX environment
+- Rails logging uses lograge. Set the `"LOGRAGE_IN_DEVELOPMENT" == "true"` environment variable to use this log format locally.

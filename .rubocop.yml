@@ -1,0 +1,20 @@
+require:
+  - standard
+  - rubocop-rails
+  - rubocop-minitest
+  - rubocop-capybara
+  - rubocop-factory_bot
+  - rubocop-performance
+
+inherit_gem:
+  standard: config/base.yml
+
+AllCops:
+  NewCops: enable
+  SuggestExtensions: false
+  Exclude:
+    - tmp/**/*
+    - bin/**/*
+    - vendor/**/*
+    - public/**/*
+    - coverage/**/*
