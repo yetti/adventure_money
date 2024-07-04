@@ -24,3 +24,7 @@ A Ruby on Rails implementation of [Lazslo Pandy's Adventure Money](http://laszlo
 
 - All runtime configuration should be supplied in the UNIX environment
 - Rails logging uses lograge. Set the `"LOGRAGE_IN_DEVELOPMENT" == "true"` environment variable to use this log format locally.
+
+## Related links
+
+- ER Diagram - https://dbdiagram.io/d/adventure-money-6685f6629939893daefda9c8
