@@ -59,6 +59,9 @@ gem "httpx", "~> 1.2"
 # More performant JSON parser
 gem "oj", "~> 3.16"
 
+# User authentication
+gem "devise", "~> 4.9"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[mri windows]
