@@ -49,13 +49,13 @@ services:
   mail:
     labels:
       - dev.orbstack.domains=mail.adventuremoney.local
-      - dev.orbstack.http-port=8025
+      - dev.orbstack.http-port=1080
     image: marlonb/mailcrab:latest
     logging:
       driver: "none"
     ports:
       - 1025:1025
-      - 8025:8025
+      - 1080:1080
 
 volumes:
   postgres-data:

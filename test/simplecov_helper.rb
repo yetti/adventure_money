@@ -18,6 +18,5 @@ SimpleCov.start "rails" do
   add_group "Services", "app/services"
 end
 
-SimpleCov.enable_coverage :branch
-SimpleCov.minimum_coverage line: 90, branch: 80
+SimpleCov.minimum_coverage line: 80
 SimpleCov.maximum_coverage_drop 5

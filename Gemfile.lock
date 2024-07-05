@@ -81,6 +81,7 @@ GEM
     ast (2.4.2)
     backport (1.2.0)
     base64 (0.2.0)
+    bcrypt (3.1.20)
     benchmark (0.3.0)
     better_html (2.1.1)
       actionview (>= 6.0)
@@ -123,6 +124,12 @@ GEM
     debug (1.9.2)
       irb (~> 1.10)
       reline (>= 0.3.8)
+    devise (4.9.4)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0)
+      responders
+      warden (~> 1.2.3)
     diff-lcs (1.5.1)
     docile (1.4.0)
     dotenv (3.1.2)
@@ -144,6 +151,8 @@ GEM
     factory_bot_rails (6.4.3)
       factory_bot (~> 6.4)
       railties (>= 5.0.0)
+    faker (3.4.1)
+      i18n (>= 1.8.11, < 2)
     faraday (2.9.2)
       faraday-net_http (>= 2.0, < 3.2)
     faraday-net_http (3.1.0)
@@ -228,6 +237,7 @@ GEM
       racc (~> 1.4)
     oj (3.16.4)
       bigdecimal (>= 3.0)
+    orm_adapter (0.5.0)
     parallel (1.25.1)
     parser (3.3.3.0)
       ast (~> 2.4.1)
@@ -297,6 +307,9 @@ GEM
       io-console (~> 0.5)
     request_store (1.7.0)
       rack (>= 1.4)
+    responders (3.1.1)
+      actionpack (>= 5.2)
+      railties (>= 5.2)
     reverse_markdown (2.1.1)
       nokogiri
     rexml (3.3.1)
@@ -392,6 +405,8 @@ GEM
     unicode-display_width (2.5.0)
     uri (0.13.0)
     vcr (6.2.0)
+    warden (1.2.9)
+      rack (>= 2.0.9)
     web-console (4.2.1)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -428,9 +443,11 @@ DEPENDENCIES
   cssbundling-rails
   cuprite
   debug
+  devise (~> 4.9)
   dotenv-rails
   erb_lint
   factory_bot_rails
+  faker
   faraday (~> 2.9)
   httpx (~> 1.2)
   jbuilder
