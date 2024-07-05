@@ -19,3 +19,4 @@ AllCops:
     - public/**/*
     - coverage/**/*
     - docs/**/*
+    - db/schema*.*
