@@ -23,8 +23,6 @@
         "dbaeumer.vscode-eslint",
         "mhutchie.git-graph",
         "connorshea.vscode-ruby-test-adapter",
-        "MateuszDrewniak.ruby-test-runner",
-        "davidpallinder.rails-test-runner",
         "oderwat.indent-rainbow",
         "aliariff.auto-add-brackets",
         "benspaulding.procfile",

@@ -5,6 +5,9 @@ set -e
 echo "[ bin/ci ] Setting RAILS_ENV"
 export RAILS_ENV=test
 
+echo "[ bin/ci ] Setting CI"
+export CI=true
+
 echo "[ bin/ci ] Preparing database"
 bundle exec rails db:prepare
 
