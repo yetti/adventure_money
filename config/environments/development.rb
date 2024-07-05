@@ -36,8 +36,17 @@ Rails.application.configure do
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
 
+  # Configure SMTP settings
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: "mail.adventuremoney.local",
+    port: 1025,
+    domain: "adventuremoney.local",
+    enable_starttls_auto: true
+  }
+
   # Default ActionMailer URL
-  config.action_mailer.default_url_options = {host: "localhost", port: 3000}
+  config.action_mailer.default_url_options = {host: "adventuremoney.local", port: 3000}
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
@@ -73,4 +82,6 @@ Rails.application.configure do
 
   # Raise error when a before_action's only/except options reference missing actions
   config.action_controller.raise_on_missing_callback_actions = true
+
+  config.hosts << "adventuremoney.local"
 end

@@ -91,6 +91,9 @@ group :development, :test do
 
   # Factories to generate mock data for testing
   gem "factory_bot_rails"
+
+  # Generate fake data for testing
+  gem "faker"
 end
 
 group :development do
