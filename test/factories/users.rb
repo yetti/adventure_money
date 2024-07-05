@@ -4,5 +4,9 @@ FactoryBot.define do
     first_name { Faker::Name.first_name }
     last_name { Faker::Name.last_name }
     password { Faker::Internet.password }
+
+    after(:build) do |user|
+      user.skip_confirmation!
+    end
   end
 end
