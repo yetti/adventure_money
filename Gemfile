@@ -54,7 +54,7 @@ gem "lograge", "~> 0.14.0"
 gem "faraday", "~> 2.9"
 
 # More performant http client
-gem "httpx", "~> 1.2"
+gem "httpx", "~> 1.3"
 
 # More performant JSON parser
 gem "oj", "~> 3.16"
