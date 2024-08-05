@@ -51,7 +51,7 @@ gem "bootsnap", require: false
 gem "lograge", "~> 0.14.0"
 
 # Use Faraday to perform HTTP requests
-gem "faraday", "~> 2.9"
+gem "faraday", "~> 2.10"
 
 # More performant http client
 gem "httpx", "~> 1.2"
