@@ -55,6 +55,11 @@ gem "devise", "~> 4.9"
 # No longer a default gem in Ruby 3.5.0
 gem "ostruct", "~> 0.6.0"
 
+# Sentry dependencies
+gem "stackprof"
+gem "sentry-ruby"
+gem "sentry-rails"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
