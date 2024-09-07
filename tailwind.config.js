@@ -15,5 +15,13 @@ module.exports = {
       },
     },
   },
-  plugins: [require("@tailwindcss/typography"), require("@tailwindcss/forms")],
+  plugins: [
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/forms"),
+    require("daisyui"),
+  ],
+  daisyui: {
+    themes: ["emerald", "dracula"],
+  },
+  darkMode: ["class", '[data-theme="dracula"]'],
 };
