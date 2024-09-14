@@ -193,6 +193,15 @@ GEM
     method_source (1.1.0)
     mini_mime (1.1.5)
     minitest (5.25.1)
+    monetize (1.13.0)
+      money (~> 6.12)
+    money (6.19.0)
+      i18n (>= 0.6.4, <= 2)
+    money-rails (1.15.0)
+      activesupport (>= 3.0)
+      monetize (~> 1.9)
+      money (~> 6.13)
+      railties (>= 3.0)
     msgpack (1.7.2)
     multi_xml (0.7.1)
       bigdecimal (~> 3.1)
@@ -325,6 +334,7 @@ GEM
       rubocop-minitest
       rubocop-performance
       rubocop-rails
+    ruby-next-core (1.0.3)
     ruby-progressbar (1.13.0)
     rubyzip (2.3.2)
     securerandom (0.3.1)
@@ -371,6 +381,9 @@ GEM
       activesupport (>= 5.2.0, < 8.0)
       concurrent-ruby (~> 1.0)
       method_source (~> 1.0)
+    view_component-contrib (0.2.3)
+      ruby-next-core (>= 0.15.0)
+      view_component
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.2.1)
@@ -418,6 +431,7 @@ DEPENDENCIES
   jbuilder
   jsbundling-rails
   lograge (~> 0.14.0)
+  money-rails (~> 1.15)
   multi_xml (~> 0.7.1)
   ostruct (~> 0.6.0)
   ox (~> 2.14)
@@ -439,7 +453,8 @@ DEPENDENCIES
   turbo-rails
   tzinfo-data
   vcr
-  view_component (~> 3.14.0)
+  view_component (~> 3.14)
+  view_component-contrib (~> 0.2.3)
   web-console
   webmock
 

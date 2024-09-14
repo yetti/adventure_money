@@ -60,9 +60,6 @@ gem "stackprof"
 gem "sentry-ruby"
 gem "sentry-rails"
 
-# View components
-gem "view_component", "~> 3.14.0"
-
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
@@ -114,3 +111,8 @@ group :test do
   # Record HTTP requests for playback in test
   gem "vcr"
 end
+
+gem "view_component", "~> 3.14"
+gem "view_component-contrib", "~> 0.2.3"
+
+gem "money-rails", "~> 1.15"
