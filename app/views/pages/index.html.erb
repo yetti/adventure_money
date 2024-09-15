@@ -1,2 +1,15 @@
-<h1>Pages#index</h1>
-<p>Find me in app/views/pages/index.html.erb</p>
+<div class="relative isolate overflow-hidden pt-4">
+  <!-- Secondary navigation -->
+  <%= render "shared/secondary_nav" %>
+
+  <!-- Stats -->
+  <%= render "shared/stats_summary" %>
+</div>
+
+<div class="space-y-16 py-16 xl:space-y-20">
+  <!-- Recent activity table -->
+  <%= render "shared/recent_activity"%>
+
+  <!-- Recent client list-->
+  <%= render "shared/recent_account_list" %>
+</div>
