@@ -1,3 +1,5 @@
+@import url("roboto_mono.css");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

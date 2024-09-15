@@ -10,9 +10,9 @@
     <%= yield :head %>
 
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-    <link rel="preload" as="font" href="victor_mono.woff2" crossorigin>
+    <link rel="preload" as="font" href="roboto-mono.woff2" type="font/woff2" crossorigin>
+    <link rel="preload" as="font" href="roboto-mono-ext.woff2" type="font/woff2" crossorigin>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= stylesheet_link_tag "victor_mono", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
     <%= Sentry.get_trace_propagation_meta.html_safe %> <%# erblint:disable ErbSafety %>
   </head>
@@ -21,6 +21,8 @@
     <%= render "shared/navbar" %>
 
     <main>
+      <%= render "shared/alerts" %>
+
       <%= yield %>
     </main>
   </body>
