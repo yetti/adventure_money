@@ -6,7 +6,7 @@ module.exports = {
     "./app/helpers/**/*.rb",
     "./app/assets/stylesheets/**/*.css",
     "./app/javascript/**/*.js",
-    // "./app/components/**/*.html.erb",
+    "./app/components/**/*.html.erb",
   ],
   theme: {
     extend: {
@@ -15,13 +15,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    require("@tailwindcss/typography"),
-    require("@tailwindcss/forms"),
-    require("daisyui"),
-  ],
-  daisyui: {
-    themes: ["emerald", "dracula"],
-  },
-  darkMode: ["class", '[data-theme="dracula"]'],
+  plugins: [require("@tailwindcss/typography"), require("@tailwindcss/forms")],
 };

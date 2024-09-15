@@ -1,5 +1,5 @@
 {
-  "name": "app",
+  "name": "adventure_money",
   "private": true,
   "devDependencies": {
     "daisyui": "^4.12.10",

@@ -24,6 +24,12 @@
     <%= render HeaderComponent.new %>
 
     <main class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <% if flash.present? %>
+        <% flash.each do |key, value| %>
+          <p><%= key %>: <%= value %></p>
+          <%= render AlertComponent.new(key, value) %>
+        <% end %>
+      <% end %>
       <div class="relative isolate overflow-hidden pt-20">
         <%= yield %>
       </div>

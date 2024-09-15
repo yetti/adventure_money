@@ -44,11 +44,6 @@ gem "httpx", "~> 1.3"
 # Use a common HTTP client interface
 gem "faraday", "~> 2.10"
 
-# More performant XML parser
-gem "ox", "~> 2.14"
-# Swappable backend for XML parsing
-gem "multi_xml", "~> 0.7.1"
-
 # User authentication
 gem "devise", "~> 4.9"
 
@@ -59,6 +54,12 @@ gem "ostruct", "~> 0.6.0"
 gem "stackprof"
 gem "sentry-ruby"
 gem "sentry-rails"
+
+gem "view_component", "~> 3.14"
+gem "view_component-contrib", "~> 0.2.3"
+gem "rails_icons", "~> 0.3.0"
+
+gem "money-rails", "~> 1.15"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -111,8 +112,3 @@ group :test do
   # Record HTTP requests for playback in test
   gem "vcr"
 end
-
-gem "view_component", "~> 3.14"
-gem "view_component-contrib", "~> 0.2.3"
-
-gem "money-rails", "~> 1.15"
