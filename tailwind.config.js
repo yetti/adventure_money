@@ -13,6 +13,7 @@ module.exports = {
       fontFamily: {
         sans: ["Inter", ...defaultTheme.fontFamily.sans],
         mono: ["Roboto Mono", ...defaultTheme.fontFamily.mono],
+        display: ["Unica One", ...defaultTheme.fontFamily.sans],
       },
     },
   },
