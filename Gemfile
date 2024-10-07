@@ -42,7 +42,7 @@ gem "lograge", "~> 0.14.0"
 # More performant HTTP client
 gem "httpx", "~> 1.3"
 # Use a common HTTP client interface
-gem "faraday", "~> 2.10"
+gem "faraday", "~> 2.12"
 
 # More performant XML parser
 gem "ox", "~> 2.14"
