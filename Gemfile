@@ -5,7 +5,7 @@ gem "rails", "~> 7.2.1"
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
 gem "propshaft"
 # Use postgresql as the database for Active Record
-gem "pg", "~> 1.1"
+gem "pg", "~> 1.5"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 # Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
@@ -42,7 +42,7 @@ gem "lograge", "~> 0.14.0"
 # More performant HTTP client
 gem "httpx", "~> 1.3"
 # Use a common HTTP client interface
-gem "faraday", "~> 2.10"
+gem "faraday", "~> 2.12"
 
 # More performant XML parser
 gem "ox", "~> 2.14"
