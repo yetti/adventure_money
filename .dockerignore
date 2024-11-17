@@ -38,3 +38,8 @@
 
 # Ignore coverage reports
 /coverage
+
+# Vite Ruby
+/public/vite*
+node_modules
+/.vite
