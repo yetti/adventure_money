@@ -109,3 +109,5 @@ group :test do
   # Record HTTP requests for playback in test
   gem "vcr"
 end
+
+gem "vite_rails", "~> 3.0"
