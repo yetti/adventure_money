@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" class="h-full bg-gray-100">
   <head>
     <title inertia><%= content_for(:title) || "Adventure Money" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -13,14 +13,13 @@
     <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
     <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
 
-    <link rel="icon" href="/icon.png" type="image/png">
-    <link rel="icon" href="/icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/icon.png">
+    <%= render partial: "shared/favicons" %>
 
-    <%= vite_stylesheet_tag "application" %>
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <%= vite_stylesheet_tag "application.scss" %>
     <%= vite_client_tag %>
     <%= vite_typescript_tag "inertia" %>
-    <%= inertia_headers %>
+    <%= inertia_ssr_head %>
     <%= vite_javascript_tag 'application' %>
     <!--
       If using a TypeScript entrypoint file:
@@ -34,7 +33,7 @@
 
   </head>
 
-  <body>
+  <body class="h-full">
     <%= yield %>
   </body>
 </html>

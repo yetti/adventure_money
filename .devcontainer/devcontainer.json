@@ -5,6 +5,11 @@
   "dockerComposeFile": "compose.yaml",
   "service": "rails-app",
   "workspaceFolder": "/workspace",
+  "runArgs": [
+    "--sysctl",
+    "net.ipv6.conf.all.disable_ipv6=1",
+    "--shm-size=1g"
+  ],
   // Features to add to the dev container. More info: https://containers.dev/features.
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker:2": {},
@@ -36,6 +41,7 @@
   "forwardPorts": [
     1080,
     3000,
+    3036,
     5432,
     6080,
     6379
@@ -114,7 +120,12 @@
         "Gruntfuggly.todo-tree",
         "BriteSnow.vscode-toggle-quotes",
         "tomoki1207.pdf",
-        "jock.svg"
+        "jock.svg",
+        "antfu.vite",
+        "Vue.volar",
+        "dbaeumer.vscode-eslint",
+        "rvest.vs-code-prettier-eslint",
+        "hb432.prettier-eslint-typescript"
       ]
     }
   },

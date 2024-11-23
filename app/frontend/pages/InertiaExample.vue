@@ -23,7 +23,7 @@
         count is {{ count }}
       </button>
       <p>
-        Edit <code>app/frontend/pages/InertiaExample.vue</code> and save to test
+        Edit <code class="break-all">app/frontend/pages/InertiaExample.vue</code> and save to test
         HMR
       </p>
     </div>
@@ -34,18 +34,18 @@
 </template>
 
 <script setup lang="ts">
-import { Head } from '@inertiajs/vue3'
-import { ref } from 'vue'
+import { Head } from "@inertiajs/vue3";
+import { ref } from "vue";
 
-import vueSvg from '/assets/vue.svg'
-import inertiaSvg from '/assets/inertia.svg'
-import viteRubySvg from '/assets/vite_ruby.svg'
+import vueSvg from "/assets/vue.svg";
+import inertiaSvg from "/assets/inertia.svg";
+import viteRubySvg from "/assets/vite_ruby.svg";
 
 defineProps({
   name: String,
-})
+});
 
-const count = ref(0)
+const count = ref(0);
 </script>
 
 <style scoped>
