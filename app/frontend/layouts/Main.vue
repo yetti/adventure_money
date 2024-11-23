@@ -14,7 +14,7 @@
           <div class="flex">
             <div class="flex shrink-0 items-center">
               <img class="block h-8 w-auto lg:hidden" :src="logo" alt="Adventure Money" />
-              <img class="hidden h-8 w-auto lg:block" :src="logo" alt="Adventure Money" />
+              <img class="hidden h-8 w-auto lg:block" :src="large_logo" alt="Adventure Money" />
             </div>
             <div class="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
               <a v-for="item in navigation" :key="item.name" :href="item.href" :class="[item.current ? 'border-indigo-500 text-gray-900' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700', 'inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium']" :aria-current="item.current ? 'page' : undefined">{{ item.name }}</a>
@@ -102,6 +102,7 @@
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/vue/24/outline'
 import logo from '@/assets/coin.svg'
+import large_logo from '@/assets/advmoney_logo.svg'
 
 const user = {
   name: 'Tom Cook',
