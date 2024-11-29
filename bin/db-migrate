@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+set -e
+
+echo "\n== Migrating development schema\n"
+bin/rails db:migrate
+
+echo "\n== Migrating test schema\n"
+bin/rails db:migrate RAILS_ENV=test

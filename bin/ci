@@ -1,0 +1,22 @@
+#!/usr/bin/env sh
+
+set -e
+
+export CI=true
+
+echo "\n== Linting code with safe auto-correction\n"
+bin/rubocop -A
+
+echo "\n== Running unit tests\n"
+bin/rails test
+
+echo "\n== Running system tests\n"
+bin/rails test:system
+
+echo "\n== Analysing code for security vulnerabilities\n"
+bin/brakeman -q -o tmp/brakeman.html
+
+echo "\n== Analysing Ruby gems for security vulnerabilities\n"
+bin/bundle-audit check --update
+
+echo "\n== Done!\n"
