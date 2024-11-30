@@ -44,6 +44,7 @@
 !/app/assets/builds/.keep
 
 /node_modules
+/vendor/bundle
 
 # Ignore code coverage reports
 /coverage

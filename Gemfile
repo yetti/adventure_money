@@ -90,11 +90,14 @@ group :development, :test do
 end
 
 group :development do
-  # Use console on exceptions pages [https://github.com/rails/web-console]
-  gem "web-console"
-
   # Annotate models with schema information
   gem "annotaterb"
+
+  # Run services via Procfile
+  gem "foreman"
+
+  # Use console on exceptions pages [https://github.com/rails/web-console]
+  gem "web-console"
 end
 
 group :test do
