@@ -1,7 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="auto">
   <head>
     <title><%= content_for(:title) || "Adventure Money" %></title>
+    <meta charset="utf-8">
+    <meta name="description" content="Adventure Money is a personal finance app that helps you track shared expenses.">
+    <meta name="keywords" content="personal finance, shared expenses, money, budget">
+    <meta name="author" content="Yetrina Battad">
+    <meta name="theme-color" content="#78c2ad">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
@@ -16,12 +21,19 @@
     <%= render "shared/favicons" %>
 
     <%# Includes all stylesheet files in app/assets/stylesheets %>
-    <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
+    <%= preload_link_tag 'application.css' %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
+    <%= javascript_include_tag "color-modes", "data-turbo-track": "reload", type: "module" %>
   </head>
 
   <body>
-    <%= yield %>
+    <%= render "shared/color_modes" %>
+
+    <%= render "shared/navbar" %>
+
+    <main class="container mt-4 mb-4">
+      <%= yield %>
+    </main>
   </body>
 </html>
