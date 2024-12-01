@@ -216,6 +216,7 @@ GEM
     msgpack (1.7.5)
     multi_xml (0.7.1)
       bigdecimal (~> 3.1)
+    mutex_m (0.2.0)
     net-http (0.5.0)
       uri
     net-imap (0.5.1)
@@ -468,6 +469,7 @@ DEPENDENCIES
   kamal
   lograge (~> 0.14.0)
   multi_xml (~> 0.7.1)
+  mutex_m
   ox (~> 2.14)
   pg (~> 1.1)
   propshaft
