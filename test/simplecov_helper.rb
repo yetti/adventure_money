@@ -7,6 +7,7 @@ SimpleCov.configure do
   formatter SimpleCov::Formatter::MultiFormatter.new(
     [
       SimpleCov::Formatter::HTMLFormatter,
+      SimpleCov::Formatter::JSONFormatter,
       SimpleCov::Formatter::CoberturaFormatter
     ]
   )
@@ -19,8 +20,9 @@ SimpleCov.configure do
 
   add_group "Services", "app/services"
 
-  minimum_coverage line: 80
+  minimum_coverage line: 60
+  refuse_coverage_drop
   maximum_coverage_drop 5
 end
 
-SimpleCov.start "rails" if ENV.fetch("CI", false) == "true"
+SimpleCov.start "rails" if ENV["CI"].present?

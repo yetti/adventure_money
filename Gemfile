@@ -119,6 +119,8 @@ group :test do
   gem "simplecov"
   # Generate coverage reports in Cobertura format
   gem "simplecov-cobertura"
+  # Generate coverage reports in JSON format
+  gem "simplecov-json"
 
   # Mock HTTP requests
   gem "webmock"
