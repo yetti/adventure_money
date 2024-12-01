@@ -5,6 +5,7 @@ FROM ghcr.io/rails/devcontainer/images/ruby:$RUBY_VERSION
 ENV DEBIAN_FRONTEND=noninteractive
 RUN sudo apt update -qq && \
   sudo apt install --no-install-recommends -y curl libjemalloc-dev && \
+  sudo apt clean && \
   sudo rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # Enable jemalloc and YJIT
