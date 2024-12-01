@@ -26,4 +26,4 @@ SimpleCov.configure do
   maximum_coverage_drop 5
 end
 
-SimpleCov.start "rails" if ENV["CI"]
+SimpleCov.start "rails" if ENV.fetch("CI", false) == "true"
