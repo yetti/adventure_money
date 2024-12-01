@@ -1,8 +1,11 @@
 # frozen_string_literal: true
 
 ENV["RAILS_ENV"] ||= "test"
+require_relative "simplecov_helper"
 require_relative "../config/environment"
 require "rails/test_help"
+
+Dir[File.join(__dir__, "support/**/*.rb")].sort.each { |file| require file }
 
 module ActiveSupport
   class TestCase
@@ -13,6 +16,9 @@ module ActiveSupport
     fixtures :all
 
     # Add more helper methods to be used by all tests here...
-    include FactoryBot::Syntax::Methods
+
+    setup do
+      load_routes
+    end
   end
 end
