@@ -9,9 +9,9 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   class AuthenticatedUserTest < ActionDispatch::IntegrationTest
+    include Devise::Test::IntegrationHelpers
+
     setup do
-      # TODO: follow up when the fix for the hack below is released https://github.com/heartcombo/devise/pull/5728
-      Rails.application.reload_routes_unless_loaded
       @user = FactoryBot.create(:user)
       sign_in @user
     end

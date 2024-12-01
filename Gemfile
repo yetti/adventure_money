@@ -112,10 +112,15 @@ group :test do
   # Better javaScript testing for Capybara
   gem "cuprite"
 
+  # better minitest reporting
+  gem "minitest-reporters"
+
   # Code coverage reporting
   gem "simplecov"
   # Generate coverage reports in Cobertura format
   gem "simplecov-cobertura"
+  # Generate coverage reports in JSON format
+  gem "simplecov-json"
 
   # Mock HTTP requests
   gem "webmock"
