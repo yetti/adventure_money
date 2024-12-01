@@ -60,6 +60,8 @@ gem "multi_xml", "~> 0.7.1"
 # User authentication
 gem "devise", "~> 4.9"
 
+gem "mutex_m"
+
 # Sentry dependencies
 gem "stackprof"
 gem "sentry-ruby"
