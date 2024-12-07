@@ -9,10 +9,8 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   class AuthenticatedUserTest < ActionDispatch::IntegrationTest
-    include Devise::Test::IntegrationHelpers
-
     setup do
-      @user = FactoryBot.create(:user)
+      @user = create(:user)
       sign_in @user
     end
 
