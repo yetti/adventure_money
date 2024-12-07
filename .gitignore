@@ -48,8 +48,8 @@
 
 # Ignore code coverage reports
 /coverage
-/test/html_reports
-/test/reports
+/test/html_reports/*
+/test/reports/*
 
 # Vite Ruby
 /public/vite*
