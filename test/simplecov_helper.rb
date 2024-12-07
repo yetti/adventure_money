@@ -2,6 +2,7 @@
 
 require "simplecov"
 require "simplecov-cobertura"
+require "simplecov-json"
 
 SimpleCov.configure do
   formatter SimpleCov::Formatter::MultiFormatter.new(
@@ -25,4 +26,4 @@ SimpleCov.configure do
   maximum_coverage_drop 5
 end
 
-SimpleCov.start "rails" if ENV["CI"].present?
+SimpleCov.start "rails" if ENV["CI"]
