@@ -10,8 +10,7 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
 
   class AuthenticatedUserTest < ActionDispatch::IntegrationTest
     setup do
-      @user = create(:user)
-      sign_in @user
+      sign_in_user
     end
 
     test "should get index" do

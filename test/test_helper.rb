@@ -17,6 +17,7 @@ module ActiveSupport
 
     # Add more helper methods to be used by all tests here...
     include Devise::Test::IntegrationHelpers
+    include SignInUser
 
     setup do
       load_routes

@@ -4,8 +4,7 @@ require "test_helper"
 
 class PeopleControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @user = create(:user)
-    sign_in @user
+    sign_in_user
     @person = create(:person)
   end
 

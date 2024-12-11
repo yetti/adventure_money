@@ -130,6 +130,9 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise_invitable (2.0.9)
+      actionmailer (>= 5.0)
+      devise (>= 4.6)
     docile (1.4.1)
     dotenv (3.1.4)
     drb (2.2.1)
@@ -468,6 +471,7 @@ DEPENDENCIES
   cuprite
   debug
   devise (~> 4.9)
+  devise_invitable (~> 2.0.0)
   erb_lint
   factory_bot_rails
   faker
