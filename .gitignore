@@ -55,3 +55,6 @@
 /public/vite*
 node_modules
 /.vite
+
+# Ignore test VCR cassettes
+/test/fixtures/files/cassettes
