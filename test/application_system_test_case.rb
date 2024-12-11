@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 require "test_helper"
+SimpleCov.coverage_dir "coverage/system"
 
 Dir[File.join(__dir__, "system/support/**/*.rb")].sort.each { |file| require file }
 

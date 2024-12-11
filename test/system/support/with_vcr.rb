@@ -1,13 +1,15 @@
+# frozen_string_literal: true
+
 # frozen_string_literal
 
-require 'vcr'
+require "vcr"
 
-module WithVCR
+module WithVcr
   private
 
   def with_expiring_vcr_cassette
-    names = self.class.name.split("::")
-    cassette_path = names.map { |s| s.gsub(/[^A-Z0-9]+/i, "_") }.join("/")
+    class_name = self.class.name.underscore
+    cassette_path = [class_name, name].join("/")
 
     VCR.use_cassette(cassette_path) do |cassette|
       if File.exist?(cassette.file)
