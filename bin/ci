@@ -13,6 +13,9 @@ bin/rails test
 echo "\n== Running system tests\n"
 bin/rails test:system
 
+echo "\n== Collating coverage report\n"
+bin/rake coverage:report
+
 echo "\n== Analysing code for security vulnerabilities\n"
 bin/brakeman -q -o tmp/brakeman.html
 
