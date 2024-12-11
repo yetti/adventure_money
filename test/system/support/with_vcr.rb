@@ -9,7 +9,7 @@ module WithVcr
 
   def with_expiring_vcr_cassette
     class_name = self.class.name.underscore
-    cassette_path = [class_name, name].join("/")
+    cassette_path = [ class_name, name ].join("/")
 
     VCR.use_cassette(cassette_path) do |cassette|
       if File.exist?(cassette.file)
