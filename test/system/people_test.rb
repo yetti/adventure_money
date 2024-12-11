@@ -4,8 +4,7 @@ require "application_system_test_case"
 
 class PeopleTest < ApplicationSystemTestCase
   setup do
-    @user = create(:user)
-    sign_in @user
+    sign_in_user
     @person = create(:person)
   end
 

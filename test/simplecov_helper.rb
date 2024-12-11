@@ -5,7 +5,6 @@ require "simplecov-cobertura"
 require "simplecov-json"
 
 SimpleCov.configure do
-  coverage_dir "coverage/unit"
   formatter SimpleCov::Formatter::MultiFormatter.new(
     [
       SimpleCov::Formatter::HTMLFormatter,

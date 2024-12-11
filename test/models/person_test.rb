@@ -43,7 +43,7 @@ class PersonTest < ActiveSupport::TestCase
   end
 
   test "is a member" do
-    person = create(:person, :with_user)
+    person = create(:person, :member)
     assert_equal(person.member?, true)
   end
 end
