@@ -32,4 +32,8 @@ class Person < ApplicationRecord
   def member?
     user.present?
   end
+
+  def to_label
+    username
+  end
 end
