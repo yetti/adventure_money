@@ -31,7 +31,7 @@ class ApplicationHelperTest < ActionView::TestCase
     end
 
     test "everything else" do
-      assert_equal "alert-info", flash_class("foo")
+      assert_equal "d-none", flash_class("foo")
     end
   end
 end

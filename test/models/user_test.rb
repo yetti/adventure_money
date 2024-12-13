@@ -22,6 +22,7 @@
 #  sign_in_count          :integer          default(0), not null
 #  unconfirmed_email      :string
 #  unlock_token           :string
+#  uuid                   :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #
@@ -31,6 +32,7 @@
 #  index_users_on_email                 (email) UNIQUE
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #  index_users_on_unlock_token          (unlock_token) UNIQUE
+#  index_users_on_uuid                  (uuid) UNIQUE
 #
 require "test_helper"
 
@@ -44,5 +46,11 @@ class UserTest < ActiveSupport::TestCase
     assert_raises(ActiveRecord::RecordInvalid, match: /Validation failed: Email can't be blank/) do
       create(:user, email: nil)
     end
+  end
+
+  test "require uuid" do
+    user = create(:user)
+    assert(user.valid?)
+    assert_not_nil(user.uuid)
   end
 end

@@ -22,6 +22,7 @@
 #  sign_in_count          :integer          default(0), not null
 #  unconfirmed_email      :string
 #  unlock_token           :string
+#  uuid                   :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #
@@ -31,8 +32,11 @@
 #  index_users_on_email                 (email) UNIQUE
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #  index_users_on_unlock_token          (unlock_token) UNIQUE
+#  index_users_on_uuid                  (uuid) UNIQUE
 #
 class User < ApplicationRecord
+  include HasUuid
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -40,6 +44,8 @@ class User < ApplicationRecord
          :confirmable, :lockable, :timeoutable, :trackable
 
   has_one :person
+
+  validates :uuid, presence: true, uniqueness: true
 
   def to_label
     email

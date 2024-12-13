@@ -18,8 +18,6 @@ class PeopleTest < ApplicationSystemTestCase
     visit people_url
     click_on "New person"
 
-    check "Manager" if @person.manager
-    fill_in "User", with: @person.user_id
     fill_in "Username", with: @person.username
     click_on "Create Person"
 
@@ -27,16 +25,43 @@ class PeopleTest < ApplicationSystemTestCase
     click_on "Back"
   end
 
+  test "should create manager" do
+    visit people_url
+    click_on "New person"
+
+    check "Manager"
+    fill_in "Username", with: @person.username
+    click_on "Create Person"
+
+    assert_text "Person was successfully created"
+    assert_text "Manager: true"
+    click_on "Back"
+  end
+
+  test "should associate with User" do
+    visit people_url
+    click_on "New person"
+
+    fill_in "User", with: @user.id
+    select @user.email, from: "person_user_id"
+    fill_in "Username", with: @person.username
+    click_on "Create Person"
+
+    assert_text "Person was successfully created"
+    assert_text "User: #{@user.uuid}"
+    click_on "Back"
+  end
+
   test "should update Person" do
     visit person_url(@person)
     click_on "Edit this person", match: :first
 
-    check "Manager" if @person.manager
-    fill_in "User", with: @person.user_id
+    check "Manager"
     fill_in "Username", with: @person.username
     click_on "Update Person"
 
     assert_text "Person was successfully updated"
+    assert_text "Manager: true"
     click_on "Back"
   end
 
