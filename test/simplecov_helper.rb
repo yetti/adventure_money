@@ -12,6 +12,11 @@ SimpleCov.configure do
       SimpleCov::Formatter::CoberturaFormatter
     ]
   )
+
+  enable_coverage :branch
+  primary_coverage :branch
+  enable_coverage_for_eval
+
   add_filter do |source_file|
     source_file.lines.count < 10
   end
@@ -19,7 +24,11 @@ SimpleCov.configure do
   add_filter "tmp"
   add_filter "lib"
 
+  # Devise generated views
+  add_filter "app/views/devise/shared/_links.html.erb"
+
   add_group "Services", "app/services"
+  add_group "Views", "app/views"
 
   minimum_coverage line: 60
   refuse_coverage_drop
