@@ -69,4 +69,18 @@ class PeopleTest < ApplicationSystemTestCase
 
     assert_text "Person was successfully destroyed"
   end
+
+  test "should nullify association when User is deleted" do
+    new_user = create(:user)
+    @person.update!(user: new_user)
+    visit person_url(@person)
+    assert_text "User: #{new_user.uuid}"
+
+    new_user.destroy
+    assert_nil(User.find_by(id: new_user.id))
+    assert_not_nil(Person.find_by(id: @person.id))
+    assert_nil(@person.user)
+    visit person_url(@person)
+    assert_text "User:"
+  end
 end

@@ -53,7 +53,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable,
          :confirmable, :lockable, :timeoutable, :trackable, :invitable
 
-  has_one :person
+  has_one :person, dependent: :nullify
   has_many :invitations, class_name: self.to_s, as: :invited_by
 
   validates :uuid, presence: true, uniqueness: true
