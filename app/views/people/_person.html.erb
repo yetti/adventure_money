@@ -1,0 +1,21 @@
+<div id="<%= dom_id person %>">
+  <p>
+    <strong>UUID:</strong>
+    <%= person.uuid %>
+  </p>
+
+  <p>
+    <strong>Username:</strong>
+    <%= person.username %>
+  </p>
+
+  <p>
+    <strong>Manager:</strong>
+    <%= person.manager %>
+  </p>
+
+  <p>
+    <strong>User:</strong>
+    <%= person.user&.uuid %>
+  </p>
+</div>

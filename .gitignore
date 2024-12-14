@@ -48,10 +48,13 @@
 
 # Ignore code coverage reports
 /coverage
-/test/html_reports/*
-/test/reports/*
+/test/html_reports
+/test/reports
 
 # Vite Ruby
 /public/vite*
 node_modules
 /.vite
+
+# Ignore test VCR cassettes
+/test/fixtures/files/cassettes

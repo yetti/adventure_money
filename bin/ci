@@ -7,11 +7,8 @@ export CI=true
 echo "\n== Linting code with safe auto-correction\n"
 bin/rubocop -A
 
-echo "\n== Running unit tests\n"
-bin/rails test
-
-echo "\n== Running system tests\n"
-bin/rails test:system
+echo "\n== Running unit and system tests\n"
+bin/rails test:all
 
 echo "\n== Analysing code for security vulnerabilities\n"
 bin/brakeman -q -o tmp/brakeman.html

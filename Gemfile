@@ -3,7 +3,7 @@
 source "https://rubygems.org"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 8.0.0"
+gem "rails", "~> 8.0.0.1"
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
 gem "propshaft"
 # Use postgresql as the database for Active Record
@@ -59,6 +59,7 @@ gem "multi_xml", "~> 0.7.1"
 
 # User authentication
 gem "devise", "~> 4.9"
+gem "devise_invitable", "~> 2.0"
 
 gem "mutex_m"
 
