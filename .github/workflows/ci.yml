@@ -75,11 +75,8 @@ jobs:
           RAILS_ENV: test
           DATABASE_URL: postgres://postgres:postgres@localhost:5432
           # REDIS_URL: redis://localhost:6379/0
-        run: bin/rails db:test:prepare test test:system
+        run: bin/rails db:test:prepare test:all
         continue-on-error: true
-
-      - name: Collate coverage report
-        run: bin/rake coverage:report
 
       - name: Keep screenshots from failed system tests
         uses: actions/upload-artifact@v4

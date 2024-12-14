@@ -14,22 +14,4 @@ Rake::TestTask.new(:test) do |test|
   test.verbose = true
 end
 
-namespace :coverage do
-  task :report do
-    require 'simplecov'
-    require 'simplecov-json'
-    require 'simplecov-cobertura'
-
-    SimpleCov.collate Dir["coverage/**/.resultset.json"], 'rails' do
-      formatter SimpleCov::Formatter::MultiFormatter.new(
-        [
-          SimpleCov::Formatter::HTMLFormatter,
-          SimpleCov::Formatter::JSONFormatter,
-          SimpleCov::Formatter::CoberturaFormatter
-        ]
-      )
-    end
-  end
-end
-
 task default: :test

@@ -9,7 +9,7 @@ module ApplicationHelper
     when "warning" then "alert-warning"
     when "error" then "alert-danger"
     when "success" then "alert-success"
-    else "alert-info"
+    else "d-none"
     end
   end
 end

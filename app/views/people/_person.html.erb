@@ -1,7 +1,7 @@
 <div id="<%= dom_id person %>">
   <p>
-    <strong>User:</strong>
-    <%= person.user_id %>
+    <strong>UUID:</strong>
+    <%= person.uuid %>
   </p>
 
   <p>
@@ -14,4 +14,8 @@
     <%= person.manager %>
   </p>
 
+  <p>
+    <strong>User:</strong>
+    <%= person.user&.uuid %>
+  </p>
 </div>
