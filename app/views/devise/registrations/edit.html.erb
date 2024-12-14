@@ -4,7 +4,14 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <%= f.input :uuid, disabled: true %>
     <%= f.input :email, required: true, autofocus: true %>
+    <% unless resource.person.nil? %>
+      <p>
+        <strong>Person:</strong>
+        <%= resource.person.uuid %>
+      </p>
+    <% end %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>

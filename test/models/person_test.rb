@@ -54,4 +54,10 @@ class PersonTest < ActiveSupport::TestCase
     assert(person.valid?)
     assert_not_nil(person.uuid)
   end
+
+  test "should return username as form label" do
+    person = create(:person)
+    assert(person.valid?)
+    assert_equal(person.username, person.to_label)
+  end
 end

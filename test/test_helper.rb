@@ -20,6 +20,8 @@ module ActiveSupport
 
     setup do
       load_routes
+      @user = create(:user)
+      sign_in(@user)
     end
   end
 end
