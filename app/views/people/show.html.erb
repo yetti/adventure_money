@@ -1,9 +1,6 @@
 <%= render @person %>
 
 <div>
-  <% unless @person.member? %>
-    <%= link_to "Invite this person", new_user_invitation_path %>
-  <% end %>
   <%= link_to "Edit this person", edit_person_path(@person) %> |
   <%= link_to "Back to people", people_path %>
 
