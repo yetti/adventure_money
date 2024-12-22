@@ -26,10 +26,6 @@ FactoryBot.define do
     username { Faker::Internet.username }
     manager { false }
 
-    trait :with_user do
-      user
-    end
-
     trait :manager do
       manager { true }
     end

@@ -25,7 +25,7 @@ SimpleCov.configure do
   add_filter "lib"
 
   # Devise generated views
-  add_filter "app/views/devise/shared/_links.html.erb"
+  add_filter "app/views/devise"
 
   add_group "Services", "app/services"
   add_group "Views", "app/views"

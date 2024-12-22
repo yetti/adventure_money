@@ -26,7 +26,7 @@ class Person < ApplicationRecord
 
   belongs_to :user, optional: true
 
-  validates :username, presence: true
+  validates :username, presence: true, uniqueness: true
   validates :uuid, presence: true, uniqueness: true
 
   def member?

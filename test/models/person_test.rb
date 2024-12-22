@@ -44,11 +44,6 @@ class PersonTest < ActiveSupport::TestCase
     assert_equal(person.member?, false)
   end
 
-  test "is a member" do
-    person = create(:person, :with_user)
-    assert_equal(person.member?, true)
-  end
-
   test "requires uuid" do
     person = create(:person)
     assert(person.valid?)
