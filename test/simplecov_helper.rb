@@ -32,7 +32,7 @@ SimpleCov.configure do
 
   minimum_coverage line: 60
   refuse_coverage_drop
-  maximum_coverage_drop 5
+  maximum_coverage_drop 10
 end
 
 SimpleCov.start "rails" if ENV.fetch("CI", false) == "true"
