@@ -3,7 +3,7 @@
 source "https://rubygems.org"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 8.0.0.1"
+gem "rails", "~> 8.0.1"
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
 gem "propshaft"
 # Use postgresql as the database for Active Record
@@ -48,9 +48,9 @@ gem "thruster", require: false
 gem "lograge", "~> 0.14.0"
 
 # More performant HTTP client
-gem "httpx", "~> 1.3"
+gem "httpx", "~> 1.4"
 # Use a common HTTP client interface
-gem "faraday", "~> 2.10"
+gem "faraday", "~> 2.12"
 
 # More performant XML parser
 gem "ox", "~> 2.14"
