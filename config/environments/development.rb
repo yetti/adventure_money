@@ -77,4 +77,3 @@ Rails.application.configure do
 
   config.hosts << "advmoney.local"
 end
-
