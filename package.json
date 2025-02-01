@@ -8,6 +8,7 @@
   "dependencies": {
     "@hotwired/stimulus": "^3.2.2",
     "@hotwired/turbo-rails": "^8.0.12",
+    "@picocss/pico": "^2.0.6",
     "sass": "^1.83.4"
   }
 }
