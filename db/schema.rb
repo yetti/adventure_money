@@ -10,9 +10,47 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_02_01_061050) do
+ActiveRecord::Schema[8.0].define(version: 2025_02_07_222116) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
+
+  create_table "accounts", force: :cascade do |t|
+    t.string "uuid"
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_accounts_on_name", unique: true
+    t.index ["uuid"], name: "index_accounts_on_uuid", unique: true
+  end
+
+  create_table "bills", force: :cascade do |t|
+    t.string "uuid"
+    t.datetime "due_at"
+    t.string "name", null: false
+    t.text "description"
+    t.decimal "amount", precision: 19, scale: 4
+    t.bigint "account_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["account_id", "user_id"], name: "index_bills_on_account_id_and_user_id"
+    t.index ["account_id"], name: "index_bills_on_account_id"
+    t.index ["user_id"], name: "index_bills_on_user_id"
+    t.index ["uuid"], name: "index_bills_on_uuid", unique: true
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "uuid"
+    t.string "name", null: false
+    t.text "description"
+    t.string "categorizable_type", null: false
+    t.bigint "categorizable_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["categorizable_type", "categorizable_id"], name: "index_categories_on_categorizable"
+    t.index ["categorizable_type", "categorizable_id"], name: "index_categories_on_categorizable_type_and_categorizable_id", unique: true
+    t.index ["uuid"], name: "index_categories_on_uuid", unique: true
+  end
 
   create_table "solid_cable_messages", force: :cascade do |t|
     t.binary "channel", null: false
@@ -156,6 +194,21 @@ ActiveRecord::Schema[8.0].define(version: 2025_02_01_061050) do
     t.index ["key"], name: "index_solid_queue_semaphores_on_key", unique: true
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string "uuid"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "username", null: false
+    t.string "email", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["username"], name: "index_users_on_username", unique: true
+    t.index ["uuid"], name: "index_users_on_uuid", unique: true
+  end
+
+  add_foreign_key "bills", "accounts"
+  add_foreign_key "bills", "users"
   add_foreign_key "solid_queue_blocked_executions", "solid_queue_jobs", column: "job_id", on_delete: :cascade
   add_foreign_key "solid_queue_claimed_executions", "solid_queue_jobs", column: "job_id", on_delete: :cascade
   add_foreign_key "solid_queue_failed_executions", "solid_queue_jobs", column: "job_id", on_delete: :cascade
